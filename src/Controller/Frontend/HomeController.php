@@ -8,10 +8,7 @@
 
 namespace App\Controller\Frontend;
 
-
-use App\Controller\TwigController;
-
-class HomeController extends TwigController
+class HomeController
 {
   public function home(){
 

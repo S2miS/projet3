@@ -1,0 +1,58 @@
+/* Navigation */
+
+#authorname {
+    text-align: center;
+}
+
+ul:first-child {
+    text-align: end;
+    background-color: rgb(162, 196, 201);
+}
+
+#menu {
+    display : flex ;
+    flex-direction : row ;
+    background-color : #B6D7A8;
+    justify-content: space-around;
+}
+
+/*Footer */
+
+#footer {
+    background-color: rgb(162, 196, 201);
+    justify-content: space-between;
+    align-items: flex-start;
+    height : 10vh ;
+}
+
+#firstlink {
+    display: flex;
+    flex-direction : row ;
+    justify-content: flex-start ;
+    width : 45% ;
+    float : left ;
+    height : 10vh ;
+}
+
+#aboutcontact {
+    display: flex;
+    flex-direction : column ;
+    height : 10vh ;
+    justify-content: flex-start ;
+    padding-left : 5vh ;
+}
+
+#aboutcontact a {
+    padding-bottom : 2vh ;
+}
+
+#social {
+    display: flex;
+    flex-direction: column;
+    width:40%;
+    align-items: flex-end;
+    align-content: flex-start;
+    justify-content: space-around;
+    height : 10vh ;
+    float : right ;
+}

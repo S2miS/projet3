@@ -23,7 +23,10 @@ ul:first-child {
     flex-direction : row ;
     background-color : #B6D7A8;
     justify-content: space-around;
-    padding: 15px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    padding-left: 25%;
+    padding-right: 25%;
 }
 #navigation {
     font-family: 'Montserrat', sans-serif;
@@ -109,7 +112,7 @@ ul:first-child {
 #hometext3 {
     padding-left: 10%;
 }
-#hometext1,#hometext2, #hometext3 {
+#hometext1, #hometext2, #hometext3 {
     padding-top: 100px;
     padding-bottom: 100px;
 }
@@ -127,6 +130,53 @@ ul:first-child {
     text-decoration: none;
 }
 
-h3 {
-
+#homepage h3 {
+    text-align: center;
+    padding-top: 25px;
+    padding-bottom: 25px;
+    font-size: x-large;
+    font-weight: 700;
 }
+
+/* AllChapters */
+
+#allchapters {
+    font-family: 'Montserrat', sans-serif;
+}
+#allchapters h3 {
+    text-align: center;
+    font-size: x-large;
+    font-weight: bold;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+#allchapters p {
+    padding-right: 25%;
+    padding-left: 25%;
+    line-height: 1.8;
+}
+#allchapters h4 {
+    text-align: center;
+    padding-top: 25px;
+    padding-bottom: 25px;
+    font-size: x-large;
+    font-weight: bold;
+}
+
+/* About */
+
+p img {
+    width: 300px;
+    height: 300 px;
+    border: 1px black solid;
+    border-radius: 10px;
+    margin-left: 25%;
+    float:left;
+}
+
+#description {
+    justify-content: center;
+    display: flex;
+    margin-top: 25px;
+}
+

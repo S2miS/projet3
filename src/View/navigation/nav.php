@@ -9,10 +9,10 @@
         <a class="fab fa-instagram" href="ton_lien.html"></a>
     </ul>
     <ul id="menu">
-        <li><a href="../home/home.php">ACCUEIL</a></li>
-        <li><a href="../book/allChapters.php">ROMAN</a></li>
-        <li><a href="../about/about.php">A PROPOS</a></li>
-        <li><a href="../contact/contact.php">CONTACT</a></li>
+        <li><a href="http://localhost/Projet3/src/View/base.php">ACCUEIL</a></li>
+        <li><a href="http://localhost/Projet3/src/View/book/allChapters.php">ROMAN</a></li>
+        <li><a href="http://localhost/Projet3/src/View/about/about.php">A PROPOS</a></li>
+        <li><a href="http://localhost/Projet3/src/View/contact/contact.php">CONTACT</a></li>
     </ul>
 
     <?php

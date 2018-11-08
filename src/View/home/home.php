@@ -2,7 +2,7 @@
     <h1 id="home-title">Bienvenue !</h1>
 
     <div id="hometext1">
-        <p>Si vous souhaitez lire mon roman épisodique, rendez-vous ici !<a href="http://localhost/Projet3/src/View/book/home.php" title="ROMAN"><span>ROMAN</span></a></p>
+        <p>Si vous souhaitez lire mon roman épisodique, rendez-vous ici !<a href="http://localhost/Projet3/src/View/book/allChapters.php" title="ROMAN"><span>ROMAN</span></a></p>
     </div>
 
     <div id="hometext2">

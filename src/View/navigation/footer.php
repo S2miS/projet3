@@ -1,9 +1,9 @@
 <div id="footer">
 <div id="firstlink">
-<a href="ton_lien.html">Mentions légales</a>
+<a href="http://localhost/Projet3/src/View/about/legalNotice.php">Mentions légales</a>
 <ul id="aboutcontact">
-    <a href="ton_lien.html">A Propos</a>
-    <a href="ton_lien.html">Contact</a>
+    <a href="http://localhost/Projet3/src/View/about/about.php">A Propos</a>
+    <a href="http://localhost/Projet3/src/View/contact/contact.php">Contact</a>
 </ul>
 </div>
 <ul id="social">

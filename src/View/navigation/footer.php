@@ -7,8 +7,8 @@
 </ul>
 </div>
 <ul id="social">
-    <a class="fab fa-facebook" href="ton_lien.html">Facebook</a>
-    <a class="fab fa-twitter" href="ton_lien.html">Twitter</a>
-    <a class="fab fa-linkedin-in" href="ton_lien.html">LinkedIn</a>
+    <a href="ton_lien.html"><i class="fab fa-facebook"></i>Facebook</a>
+    <a href="ton_lien.html"><i class="fab fa-twitter"></i>Twitter</a>
+    <a href="ton_lien.html"><i class="fab fa-instagram"></i>Instagram</a>
 </ul>
 </div>

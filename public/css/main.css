@@ -1,12 +1,21 @@
+/*Font*/
+@font-face {
+font-family: 'Montserrat', sans-serif;
+}
 /* Navigation */
 
 #authorname {
     text-align: center;
+    padding: 15px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
+    font-size: xx-large;
 }
 
 ul:first-child {
     text-align: end;
     background-color: rgb(162, 196, 201);
+    padding: 10px;
 }
 
 #menu {
@@ -14,6 +23,15 @@ ul:first-child {
     flex-direction : row ;
     background-color : #B6D7A8;
     justify-content: space-around;
+    padding: 15px;
+}
+#navigation {
+    font-family: 'Montserrat', sans-serif;
+    font-size: x-large;
+}
+
+#icons a {
+    padding-right: 25px;
 }
 
 /*Footer */
@@ -23,6 +41,15 @@ ul:first-child {
     justify-content: space-between;
     align-items: flex-start;
     height : 10vh ;
+    font-family: 'Montserrat', sans-serif;
+    font-size: x-large;
+    padding-top: 10px;
+    padding-left: 10px;
+}
+
+#footer a {
+    font-family: 'Montserrat', sans-serif;
+    font-size: x-large;
 }
 
 #firstlink {
@@ -55,4 +82,51 @@ ul:first-child {
     justify-content: space-around;
     height : 10vh ;
     float : right ;
+}
+
+#social a {
+    padding-right: 25px;
+}
+#social a i {
+    padding-right: 10px;
+}
+
+    /*Homepage*/
+
+#home-title {
+    text-align: center;
+    padding-top: 25px;
+    font-size: x-large;
+    font-weight: bold;
+}
+#hometext1 {
+    padding-left: 30%;
+}
+
+#hometext2 {
+    padding-left:30%;
+}
+#hometext3 {
+    padding-left: 10%;
+}
+#hometext1,#hometext2, #hometext3 {
+    padding-top: 100px;
+    padding-bottom: 100px;
+}
+#homepage {
+    font-family: 'Montserrat', sans-serif;
+    font-size: x-large;
+}
+
+#hometext1 a, #hometext2 a, #hometext3 a {
+    margin-left: 100px;
+    margin-right: 100px;
+    padding: 10px;
+    color: #EA9999;
+    border: 3px #EA9999 solid;
+    text-decoration: none;
+}
+
+h3 {
+
 }

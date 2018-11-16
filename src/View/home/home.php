@@ -1,3 +1,6 @@
+<?php
+ob_start();
+?>
 <div id="homepage">
     <h1 id="home-title">Bienvenue !</h1>
 
@@ -16,3 +19,12 @@
     <h3>Derniers chapitres</h3>
 
 </div>
+
+<?php
+$content = ob_get_clean();
+?>
+<?php
+require("src/View/base.php");
+?>
+
+

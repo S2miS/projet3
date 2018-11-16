@@ -28,6 +28,18 @@ font-family: 'Montserrat', sans-serif;
     padding-left: 25%;
     padding-right: 25%;
 }
+
+#adminmenu {
+    display : flex ;
+    flex-direction : row ;
+    background-color : #EA9999;
+    justify-content: space-around;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    padding-left: 25%;
+    padding-right: 25%;
+}
+
 #navigation {
     font-family: 'Montserrat', sans-serif;
     font-size: x-large;
@@ -36,6 +48,7 @@ font-family: 'Montserrat', sans-serif;
 #icons a {
     padding-right: 25px;
 }
+
 
 /*Footer */
 
@@ -168,19 +181,27 @@ font-family: 'Montserrat', sans-serif;
 #about {
     font-family: 'Montserrat', sans-serif;
 }
-p img {
+#about img {
     width: 300px;
-    height: 300 px;
     border: 1px black solid;
     border-radius: 10px;
     margin-left: 25%;
+    margin-top: 25px;
+    margin-right: 100px;
     float:left;
 }
 
 #description {
-    justify-content: center;
     display: flex;
+    justify-content: center;
+}
+
+#description figcaption {
     margin-top: 25px;
+    margin-right: 10%;
+    padding-left: 25px;
+    line-height: 1.5em;
+    text-align: justify;
 }
 
 #about h3 {
@@ -191,7 +212,7 @@ p img {
     font-weight: 700;
 }
 
-#about ul {
+#about tr {
     display: flex;
     justify-content: center;
     flex-flow: row;
@@ -205,11 +226,12 @@ p img {
     display: flex;
 }
 
-#about ul li:first-child {
+#about tr td:first-child {
     font-weight: bold;
     width: 800px;
 }
 
-#about ul li:last-child {
-    text-align: left;
+#about tr td:last-child {
+    text-align: justify;
 }
+

@@ -23,7 +23,7 @@
 
     <ul id="adminmenu">
         <li><a href="../admin/home/home.php">ACCUEIL</a></li>
-        <li><a href="../admin/commentary/commentary.php">COMMENTAIRES</a></li>
+        <li><a href="../admin/comments/comments.php">COMMENTAIRES</a></li>
         <li><a href="../admin/chapters/home.php">CHAPITRES</a></li>
     </ul>
 

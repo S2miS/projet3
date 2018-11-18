@@ -16,7 +16,7 @@
     </ul>
 
     <ul id="adminmenu">
-        <li><a href="accueil-admin">ACCUEIL</a></li>
+        <li><a href="ccueil-administrateur">ACCUEIL</a></li>
         <li><a href="commentaires">COMMENTAIRES</a></li>
         <li><a href="chapitres">CHAPITRES</a></li>
     </ul>

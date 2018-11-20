@@ -4,26 +4,42 @@ namespace App\Model;
 
 class Chapter
 {
-    private $idchapter;
+    private $id;
     private $number;
     private $title;
     private $text;
-    private $date;
+    private $creation_date;
 
-
-    public function __construct($number, $title, $text, $date, $idchapter)
+    public function __construct($values = null)
     {
-        $this->setIdchapter($idchapter);
-        $this->setNumber($number);
-        $this->setTitle($title);
-        $this->setText($text);
-        $this->setDate($date);
+        if ($values != null)
+        {
+            $this->hydrate($values);
+        }
 
     }
-
-    public function getIdChapter()
+    public function hydrate(array $values)
     {
-        return $this->idchapter;
+        foreach ($values as $key=>$value)
+        {
+            $elements = explode('_',$key);
+            $newKey='';
+            foreach($elements as $el)
+            {
+                $newKey .= ucfirst($el);
+            }
+
+            $method = 'set' .ucfirst($newKey);
+            if (method_exists($this, $method))
+            {
+                $this->$method($value);
+            }
+        }
+    }
+
+    public function getId()
+    {
+        return $this->id;
     }
 
     public function getNumber()
@@ -41,13 +57,13 @@ class Chapter
         return $this->text;
     }
 
-    public function getDate()
+    public function getCreationDate()
     {
-        return $this->date;
+        return $this->creation_date;
     }
 
-    public function setIdchapter($idchapter) {
-        $this->idchapter = $idchapter;
+    public function setId($id) {
+        $this->id = $id;
     }
 
     public function setNumber($number)
@@ -58,7 +74,7 @@ class Chapter
             return;
         }
         else {
-            $this->number = $_number;
+            $this->number = $number;
         }
     }
 
@@ -86,15 +102,15 @@ class Chapter
         }
     }
 
-    public function setDate($date)
+    public function setDate($creation_date)
     {
-        if (!is_a($date, 'DateTime')) // Si c'est un datetime.
+        if (!is_a($creation_date, 'DateTime')) // Si c'est un datetime.
         {
             trigger_error('La date doit être au format AAAA-MM-JJ HH:MM:SS', E_USER_WARNING);
             return;
         }
         else {
-            $this->date = $date;
+            $this->creation_date = $creation_date;
         }
     }
 

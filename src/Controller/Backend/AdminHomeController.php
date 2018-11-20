@@ -6,10 +6,10 @@
  * Time: 19:02
  */
 
-namespace App\Controller\Frontend;
+namespace App\Controller\Backend;
 
 
-class AdminhomeController
+class AdminHomeController
 {
     public function admin()
     {

@@ -8,11 +8,11 @@ use App\Controller\Frontend\ChapterController;
 use App\Controller\Frontend\AboutController;
 use App\Controller\Frontend\ContactController;
 use App\Controller\Frontend\LegalController;
-use App\Controller\Frontend\AdminhomeController;
-use App\Controller\Frontend\CreateController;
-use App\Controller\Frontend\EditController;
-use App\Controller\Frontend\AdminchapterController;
-use App\Controller\Frontend\CommentsController;
+use App\Controller\Backend\AdminHomeController;
+use App\Controller\Backend\AdminCreateController;
+use App\Controller\Backend\AdminEditController;
+use App\Controller\Backend\AdminchapterController;
+use App\Controller\Backend\AdminCommentsController;
 
 $url='';
 if(isset($_GET['url'])){
@@ -54,26 +54,26 @@ elseif($url==="mentions-legales"){
 //Page admin
 
 elseif($url==="accueil-administrateur"){
-    $admin = new AdminhomeController();
+    $admin = new AdminHomeController();
     $admin->admin();
 }
 
 elseif($url==="creer-chapitre"){
-    $create = new CreateController();
+    $create = new AdminCreateController();
     $create->create();
 }
 
 elseif($url==="modifier-chapitre"){
-    $edit = new EditController();
+    $edit = new AdminEditController();
     $edit->edit();
 }
 
 elseif($url==="accueil-chapitre"){
-    $homeadmin = new AdminchapterController();
-    $homeadmin->edit();
+    $homeadmin = new AdminChapterController();
+    $homeadmin->homeAdmin();
 }
 
 elseif($url==="commentaires"){
-    $comments = new CommentsController();
-    $hcomments->comments();
+    $comments = new AdminCommentsController();
+    $comments->comments();
 }

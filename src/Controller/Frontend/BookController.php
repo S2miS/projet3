@@ -1,18 +1,14 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: Sim25
- * Date: 18/11/2018
- * Time: 18:48
- */
 
 namespace App\Controller\Frontend;
 
-
+use App\Model\ChapterManager;
 class BookController
 {
     public function book()
     {
+        $allChapters = new ChapterManager();
+        $results = $allChapters->getAllChapters();
         require('src/View/book/allChapters.php');
     }
 }

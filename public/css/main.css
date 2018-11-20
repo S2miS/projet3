@@ -224,11 +224,17 @@ font-family: 'Montserrat', sans-serif;
 #allbooks {
     flex-flow: column;
     display: flex;
+    padding: 0;
+    margin: 0;
+}
+
+#allbooks td {
+    line-height: 1.5em;
 }
 
 #about tr td:first-child {
     font-weight: bold;
-    width: 800px;
+    min-width: 350px;
 }
 
 #about tr td:last-child {

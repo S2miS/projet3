@@ -6,12 +6,12 @@
  * Time: 19:04
  */
 
-namespace App\Controller\Frontend;
+namespace App\Controller\Backend;
 
 
-class AdminchapterController
+class AdminChapterController
 {
-    public function create()
+    public function homeAdmin()
     {
         require('src/View/admin/chapters/home.php');
     }

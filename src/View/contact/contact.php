@@ -1,18 +1,6 @@
-<html>
-<head>
-    <meta charset="utf-8">
-    <title>A Propos - Jean Forteroche</title>
-    <link rel="stylesheet" type="text/css" href="../../../../Projet3/public/css/main.css" media="all" />
-    <link rel='stylesheet' href="../../../../Projet3/public/css/reset.css" type="text/css">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.2/css/all.css" integrity="sha384-/rXc/GQVaYpyDdyxK+ecHPVYJSN9bmVFBvjA/9eOB+pb3F2w2N6fc5qB9Ew5yIns" crossorigin="anonymous">
-    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
-</head>
-<header>
-    <?php
-    include("../../View/navigation/nav.php");
-    ?>
-</header>
-
+<?php
+ob_start();
+?>
 <form action="../../../index.php" method="post">
 
         <input type="text" id="name" name="user_name" placeholder="Nom ou pseudo">
@@ -26,5 +14,8 @@
 </form>
 
 <?php
-include("../../View/navigation/footer.php");
+$content = ob_get_clean();
+?>
+<?php
+require("src/View/base.php");
 ?>

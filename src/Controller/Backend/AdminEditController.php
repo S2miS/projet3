@@ -6,10 +6,10 @@
  * Time: 19:04
  */
 
-namespace App\Controller\Frontend;
+namespace App\Controller\Backend;
 
 
-class EditController
+class AdminEditController
 {
     public function edit()
     {

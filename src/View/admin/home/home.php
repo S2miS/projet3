@@ -1,24 +1,54 @@
-<html>
-<head>
-    <meta charset="utf-8">
-    <title>A Propos - Jean Forteroche</title>
-    <link rel="stylesheet" type="text/css" href="../../../../public/css/main.css" media="all" />
-    <link rel='stylesheet' href="../../../../public/css/reset.css" type="text/css">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.2/css/all.css" integrity="sha384-/rXc/GQVaYpyDdyxK+ecHPVYJSN9bmVFBvjA/9eOB+pb3F2w2N6fc5qB9Ew5yIns" crossorigin="anonymous">
-    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
-</head>
-<header>
-    <?php
-    include("../../../View/navigation/nav.php");
-    ?>
-</header>
-
-<h3>Bienvenue sur la page d'administration</h3>
+<?php
+ob_start();
+?>
+<h2>Bienvenue sur la page d'administration</h2>
 
 <section>
-    <!--Ici les notifs d'administration -->
-</section>
+    <h3> Commentaires signalés </h3>
+    <?php
+    include('../../../Controller/Backend/bdConnect.php') ;
 
+    $query = $bdd->query('SELECT * FROM comments WHERE reported = 1 ORDER BY date DESC') ;
+    $resultat = $query->fetchAll();
+    $nb = count($resultat);
+    if ($nb === 0 ) {
+        echo "<h4> Il n'y a aucun commentaire signalé </h4>" ;
+    }
+
+    else {
+        foreach($resultat as $ligne) :
+            echo '<table>' ;
+            echo '<tr>' ;
+            echo '<th> Pseudo </th>' ;
+            echo '<th> Date </th>' ;
+            echo '<th> Message </th>' ;
+            echo '<th> Numéro chapitre </th>' ;
+            echo '</tr>' ;
+            echo '</th>' ;
+
+            echo '<tr>' ;
+            echo '<td>' ;
+            echo $ligne['pseudo'] ;
+            echo '</td>' ;
+            echo '<td>' ;
+            echo $ligne['date'] ;
+            echo '</td>' ;
+            echo '<td>' ;
+            echo $ligne['message'] ;
+            echo '</td>' ;
+            echo '<td>' ;
+            echo $ligne['idchapter'] ;
+            echo '</td>' ;
+            echo '</tr>' ;
+            echo '</table>' ;
+        endforeach;
+    }
+
+    ?>
+</section>
 <?php
-include("../../../View/navigation/footer.php");
+$content = ob_get_clean();
+?>
+<?php
+require("src/View/base.php");
 ?>

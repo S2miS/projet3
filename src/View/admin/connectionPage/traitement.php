@@ -1,6 +1,6 @@
 <?php
 session_start();
-include("src/Controller/Backend/dbConnect.php");
+include("src/Controller/Backend/bdConnect.php");
 
 if(isset($_POST['id'])) {
     $id = $_POST['id'] ;

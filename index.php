@@ -13,6 +13,7 @@ use App\Controller\Backend\AdminCreateController;
 use App\Controller\Backend\AdminEditController;
 use App\Controller\Backend\AdminchapterController;
 use App\Controller\Backend\AdminCommentsController;
+use App\Controller\Backend\AdminConnectionController;
 
 $url='';
 if(isset($_GET['url'])){
@@ -76,4 +77,9 @@ elseif($url==="accueil-chapitre"){
 elseif($url==="commentaires"){
     $comments = new AdminCommentsController();
     $comments->comments();
+}
+
+elseif($url==="page-connection-admin"){
+    $connectionadmin = new AdminConnectionController();
+    $connectionadmin->connectionadmin();
 }

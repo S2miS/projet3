@@ -9,7 +9,12 @@ ob_start();
     <?php
     foreach($results as $data)
     {
-        echo $data->getTitle();
+        echo "<p><a href='chapitre".$data->getId()."'>";
+        echo " CHAPITRE N° " ;
+        echo $data->getNumber() ;
+        echo " : ";
+        echo $data->getTitle() ;
+        echo " </a></p>";
     }
     ?>
     </div>

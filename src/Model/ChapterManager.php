@@ -16,9 +16,8 @@ class ChapterManager extends dbManager
 
     public function getAllChapters()
     {
-        $request = $this->db->query('SELECT id, title, number ,DATE_FORMAT(creation_date,\'%d/%m/%y\') AS creation_date_fr, text FROM chapter ORDER BY creation_date_fr DESC');
+        $request = $this->db->query('SELECT id, title, number ,DATE_FORMAT(creation_date,\'%d/%m/%y\') AS creationDate, text FROM chapter ORDER BY id DESC');
         $results = $request->fetchAll(PDO::FETCH_ASSOC);
-
         $chapters = [];
         foreach($results as $data)
         {
@@ -34,10 +33,10 @@ class ChapterManager extends dbManager
     {
         $request = $this->db->prepare('INSERT INTO  chapter (title, creation_date, number, text) VALUES (:title, :creation_date, :number, :text)');
         $add = $request ->execute([
-           'title'
-           'creation_date'
-           'number'
-           'text'
+           'title'=>$chapter->getTitle(),
+           'creation_date'=>$chapter->getCreationDate(),
+           'number'=>$chapter->getNumber(),
+           'text'=>$chapter->getText()
         ]);
     }
 

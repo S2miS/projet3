@@ -19,6 +19,29 @@ ob_start();
     <h3>Derniers chapitres</h3>
 
 </div>
+<div id="homechapters">
+<?php
+foreach($results as $data)
+{
+    ?>
+    <div class="inline-chapters">
+        <?php
+            echo "<p><a href='accueil-chapitre".$data->getId()."'>";
+            echo " CHAPITRE N° " ;
+            echo $data->getNumber() ;
+            echo " : ";
+            echo $data->getTitle() ;
+            echo "</a>";
+            echo " Résumé : " ;
+            echo $data->getText() ;
+            echo $data->getCreationDate() ;
+            echo "</p>";
+            ?>
+    </div>
+<?php
+}
+?>
+</div>
 
 <?php
 $content = ob_get_clean();

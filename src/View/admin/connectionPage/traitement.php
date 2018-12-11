@@ -11,14 +11,19 @@ if(isset($_POST['mdp'])) {
     $mdp = md5($mdp) ;
 }
 
-$query = $bdd->query('SELECT * from identification WHERE pseudo = $id AND motdepasse = $mdp') ;
-$nb_row = $query->rowCount();
+$request = $this->db->prepare('SELECT * FROM identification WHERE pseudo = :pseudo AND motdepasse = :mdp');
+$connect = $request ->execute([
+    'mdp'=>$mdp,
+    'pseudo'=>$id,
+]);
+$nb_row = $connect->rowCount();
+
 if($nb_row === 0) {
     header('Location: src/View/admin/connectionPage/connectionPage.php');
-exit;
+    exit;
 }
 else {
     $_SESSION['admin'] = true ;
-    header('Location:src/View/admin/connectionPage/connectionPage.php');
+    header('Location: src/View/admin/connectionPage/connectionPage.php');
 }
 ?>

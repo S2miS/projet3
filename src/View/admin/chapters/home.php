@@ -2,7 +2,7 @@
 ob_start();
 
 session_start();
-include('../../../Controller/Backend/bdConnect.php') ;
+include('src/Controller/Backend/bdConnect.php') ;
 
 if(!isset($_SESSION['admin'])) {
 header('Location:../connectionPage/connectionPage.php');

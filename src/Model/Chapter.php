@@ -54,7 +54,7 @@ class Chapter
         return $this->text;
     }
 
-    public function getCreationDate(): \DateTime
+    public function getCreationDate()
     {
         return $this->creation_date;
     }

@@ -15,9 +15,17 @@
         <li><a href="contact">CONTACT</a></li>
     </ul>
 
+    <?php
+
+    if (isset($_SESSION['admin'])){
+
+    ?>
     <ul id="adminmenu">
         <li><a href="accueil-administrateur">ACCUEIL</a></li>
         <li><a href="commentaires">COMMENTAIRES</a></li>
         <li><a href="chapitres">CHAPITRES</a></li>
     </ul>
 </nav>
+
+<?php }
+?>

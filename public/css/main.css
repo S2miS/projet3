@@ -2,7 +2,7 @@
 @font-face {
 font-family: 'Montserrat', sans-serif;
 }
-/* Navigation */
+/*------------------------------------------------------------------ Navigation ------------------------------------------------------------------*/
 
 #authorname {
     text-align: center;
@@ -50,7 +50,7 @@ font-family: 'Montserrat', sans-serif;
 }
 
 
-/*Footer */
+/*------------------------------------------------------------------ Footer ------------------------------------------------------------------*/
 
 #footer {
     background-color: rgb(162, 196, 201);
@@ -107,7 +107,7 @@ font-family: 'Montserrat', sans-serif;
     padding-right: 10px;
 }
 
-    /*Homepage*/
+    /*------------------------------------------------------------------ Homepage ------------------------------------------------------------------*/
 
 #home-title {
     text-align: center;
@@ -151,7 +151,25 @@ font-family: 'Montserrat', sans-serif;
     font-weight: 700;
 }
 
-/* AllChapters */
+#homechapters {
+    font-family: 'Montserrat', sans-serif;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+#homechapters a {
+    font-weight: bold;
+    display: flex;
+    flex-direction: row;
+    padding-bottom: 25px;
+    padding-top: 25px;
+}
+
+.inline-chapters {
+    width: 25vw;
+    text-align: justify;
+}
+/*------------------------------------------------------------------ AllChapters ------------------------------------------------------------------*/
 
 #allchapters {
     font-family: 'Montserrat', sans-serif;
@@ -167,6 +185,7 @@ font-family: 'Montserrat', sans-serif;
     padding-right: 25%;
     padding-left: 25%;
     line-height: 1.8;
+    text-align: justify;
 }
 #allchapters h4 {
     text-align: center;
@@ -178,12 +197,13 @@ font-family: 'Montserrat', sans-serif;
 
 #chapterslist {
     text-align: center;
-    justify-content: space-around;
-    display: flex;
     padding: 10px;
 }
+#chapterslist p:hover {
+    font-weight:bold;
+}
 
-/* About */
+/*------------------------------------------------------------------ About ------------------------------------------------------------------*/
 
 #about {
     font-family: 'Montserrat', sans-serif;
@@ -248,7 +268,7 @@ font-family: 'Montserrat', sans-serif;
     text-align: justify;
 }
 
-/* Contact */
+/*------------------------------------------------------------------ Contact ------------------------------------------------------------------*/
 
 body {
     background: #F2F3EB;

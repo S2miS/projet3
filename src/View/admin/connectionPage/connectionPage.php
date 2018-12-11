@@ -1,7 +1,7 @@
 <?php
 ob_start();
 ?>
-<form method="post" action="src/View/admin/connectionPage/traitement.php">
+<form method="post" action="src/Controller/BackEnd/AdminConnectionController.php">
 
     <fieldset>
         <label for="id">Identifiant</label>

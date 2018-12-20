@@ -16,7 +16,7 @@ class ChapterManager extends dbManager
 
     public function getAllChapters()
     {
-        $request = $this->db->query('SELECT id, title, number ,DATE_FORMAT(creation_date,\'%d/%m/%y\') AS creationDate, text FROM chapter ORDER BY id DESC');
+        $request = $this->db->query('SELECT id, title, number, text, DATE_FORMAT(creation_date,\'%d/%m/%y\') AS creationDate FROM chapter ORDER BY creation_date DESC');
         $results = $request->fetchAll(PDO::FETCH_ASSOC);
         $chapters = [];
         foreach($results as $data)

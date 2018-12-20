@@ -168,11 +168,17 @@ font-family: 'Montserrat', sans-serif;
 .inline-chapters {
     width: 25vw;
     text-align: justify;
+    padding-bottom: 25px;
 }
+
 /*------------------------------------------------------------------ AllChapters ------------------------------------------------------------------*/
 
 #allchapters {
     font-family: 'Montserrat', sans-serif;
+    background-image:url("http://s1.1zoom.me/big3/499/Many_Book_Library_468620.jpg");
+    background-repeat:no-repeat;
+    background-position:center center;
+    opacity:0.25;
 }
 #allchapters h3 {
     text-align: center;

@@ -1,11 +1,11 @@
 <?php
 ob_start();
 ?>
-<form method="post" action="src/Controller/BackEnd/AdminConnectionController.php">
+<form method="post" action="admin-auth">
 
     <fieldset>
-        <label for="id">Identifiant</label>
-        <input type="text" name="id" id="id" />
+        <label for="pseudo">Identifiant</label>
+        <input type="text" name="pseudo" id="pseudo" />
 
         <label for="mdp">Mot de passe</label>
         <input type="password" name="mdp" id="mdp" />

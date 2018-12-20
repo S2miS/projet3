@@ -12,7 +12,9 @@ namespace App\Model;
 class Connection
 {
     private $id;
-    private $mdp;
+    private $pseudo;
+    private $admin_password;
+
 
     public function __construct($values = null)
     {
@@ -38,14 +40,19 @@ class Connection
         }
     }
 
-    public function getId(): ?string
+    public function getId(): ?int
     {
         return $this->id;
     }
 
-    public function getMdp(): ?string
+    public function getPseudo(): ?string
     {
-        return $this->mdp;
+        return $this->pseudo;
+    }
+
+    public function getAdminPassword(): ?string
+    {
+        return $this->admin_password;
     }
 
     public function setId(string $id): void
@@ -53,8 +60,13 @@ class Connection
         $this->id = $id;
     }
 
-    public function setMdp(string $mdp): void
+    public function setPseudo($pseudo): void
     {
-        $this->mdp = $mdp;
+        $this->pseudo = $pseudo;
+    }
+
+    public function setAdminPassword(string $admin_password): void
+    {
+        $this->admin_password = $admin_password;
     }
 }

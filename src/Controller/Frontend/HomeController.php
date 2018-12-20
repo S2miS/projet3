@@ -9,7 +9,6 @@ class HomeController
   {
       $allChapters = new ChapterManager();
       $results = $allChapters->getAllChapters();
-      var_dump($results);
       require('src/View/home/home.php');
   }
 }

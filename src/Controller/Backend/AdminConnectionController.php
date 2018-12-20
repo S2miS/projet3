@@ -8,7 +8,8 @@
 
 namespace App\Controller\Backend;
 
-
+use App\Model\Connection;
+use App\Model\ConnectionManager;
 class AdminConnectionController
 {
     public function connectionadmin()
@@ -16,14 +17,26 @@ class AdminConnectionController
         require('src/View/admin/connectionPage/connectionPage.php');
     }
 
-    public function connection(string $id, string $mdp)
+    public function authentification(string $pseudo, string $mdp)
     {
+        $password = password_hash($mdp, PASSWORD_BCRYPT);
         $data = new Connection();
-        $data->setId($id);
-        $data->setMdp($mdp);
+        $data->setPseudo($pseudo);
+        $data->setAdminPassword($mdp);
         $connectionManager = new ConnectionManager();
         $connection = $connectionManager->login($data);
-        header('Location: action=accueil-administrateur');
+        if ($connection{'pseudo'} === $pseudo){
+            if(password_verify($mdp, $connection{'admin_password'})){
+                $_SESSION {'pseudo'} = $pseudo;
+                header('Location:accueil-administrateur');
+            }
+            else{
+                echo "mot de passe incorrecte";
+            }
+        }
+        else{
+            echo "mauvais pseudo";
+        }
+
     }
 }
-

@@ -1,5 +1,6 @@
 <?php
 //echo phpinfo() ;
+session_start();
 require 'vendor/autoload.php';
 
 use App\Controller\Frontend\HomeController;
@@ -82,4 +83,14 @@ elseif($url==="commentaires"){
 elseif($url==="page-connection-admin"){
     $connectionadmin = new AdminConnectionController();
     $connectionadmin->connectionadmin();
+}
+
+elseif($url==="admin-auth") {
+    $adminauth = new AdminConnectionController();
+    if (isset($_POST{'pseudo'}) AND isset($_POST{'mdp'})){
+        if (!empty($_POST{'pseudo'}) AND !empty($_POST{'mdp'})){
+            $adminauth->authentification($_POST{'pseudo'}, $_POST{'mdp'});
+        }
+    }
+
 }

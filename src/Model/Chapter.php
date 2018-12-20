@@ -81,7 +81,7 @@ class Chapter
         $this->text = $text;
     }
 
-    public function setDate(\DateTime $creation_date): void
+    public function setCreationDate($creation_date): void
     {
         $this->creation_date = $creation_date;
     }

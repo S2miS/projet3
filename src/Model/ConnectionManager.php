@@ -8,8 +8,8 @@
 
 namespace App\Model;
 
-
-class ConnectionManager
+use \PDO;
+class ConnectionManager extends dbManager
 {
     protected $db;
 
@@ -18,29 +18,14 @@ class ConnectionManager
         $this->db=self::dbConnect();
     }
 
-    public function login($data)
+    public function login(Connection $connection)
     {
-        session_start();
-        include("src/Controller/Backend/bdConnect.php");
-
-        $id = $data['id'] ;
-        $mdp = $data['mdp'] ;
-
-        $request = $this->db->prepare('SELECT * FROM identification WHERE pseudo = :pseudo AND motdepasse = :mdp');
-        $connect = $request ->execute([
-            'mdp'=>$mdp,
-            'pseudo'=>$id,
+        $request = $this->db->prepare('SELECT pseudo, admin_password FROM identification WHERE pseudo = :pseudo');
+        $request ->execute([
+            'pseudo' => $connection->getPseudo()
         ]);
-        $nb_row = $connect->rowCount();
-
-        if($nb_row === 0) {
-            header('Location: src/View/admin/connectionPage/connectionPage.php');
-            exit;
-        }
-        else {
-            $_SESSION['admin'] = true ;
-            header('Location: src/View/admin/connectionPage/connectionPage.php');
-        }
+        $result = $request->fetch(PDO::FETCH_ASSOC);
+        return $result;
     }
 
 

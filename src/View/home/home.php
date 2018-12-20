@@ -33,10 +33,9 @@ foreach($results as $data)
             echo $data->getTitle() ;
             echo "</a>";
             echo " Résumé : " ;
-            echo $data->getText() ;
-            echo $data->getCreationDate() ;
+            echo substr($data->getText(),0,500). "..." ;
             echo "</p>";
-            ?>
+        ?>
     </div>
 <?php
 }

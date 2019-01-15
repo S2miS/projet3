@@ -178,7 +178,7 @@ font-family: 'Montserrat', sans-serif;
     background-image:url("http://s1.1zoom.me/big3/499/Many_Book_Library_468620.jpg");
     background-repeat:no-repeat;
     background-position:center center;
-    opacity:0.25;
+    background-size: cover;
 }
 #allchapters h3 {
     text-align: center;
@@ -187,12 +187,21 @@ font-family: 'Montserrat', sans-serif;
     padding-top: 10px;
     padding-bottom: 10px;
 }
-#allchapters p {
+#Summary p {
     padding-right: 25%;
     padding-left: 25%;
     line-height: 1.8;
+    text-align: center;
     text-align: justify;
 }
+
+#chapterslist {
+    padding-right: 1px;
+    padding-left: 1px;
+    line-height: 1.8;
+    text-align: center;
+}
+
 #allchapters h4 {
     text-align: center;
     padding-top: 25px;
@@ -205,7 +214,7 @@ font-family: 'Montserrat', sans-serif;
     text-align: center;
     padding: 10px;
 }
-#chapterslist p:hover {
+#chapterslist a:hover {
     font-weight:bold;
 }
 
@@ -493,4 +502,17 @@ textarea {
     input[type='text'], [type='email'], select, textarea {
         font-size: 0.875em;
     }
+}
+
+/*------------------------------------------------------------------ LegalNotice ------------------------------------------------------------------*/
+#legalnotice {
+    font-family: 'Montserrat', sans-serif;
+    padding: 25px;
+}
+#legalnotice h3 {
+    text-align: center;
+    padding-top: 25px;
+    padding-bottom: 25px;
+    font-size: x-large;
+    font-weight: 700;
 }

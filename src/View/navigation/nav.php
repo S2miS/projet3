@@ -17,13 +17,13 @@
 
     <?php
 
-    if (isset($_SESSION['admin'])){
+    if (isset($_SESSION['pseudo'])){
 
     ?>
     <ul id="adminmenu">
         <li><a href="accueil-administrateur">ACCUEIL</a></li>
-        <li><a href="commentaires">COMMENTAIRES</a></li>
-        <li><a href="chapitres">CHAPITRES</a></li>
+        <li><a href="admin-commentaires">COMMENTAIRES</a></li>
+        <li><a href="admin-chapitres">CHAPITRES</a></li>
     </ul>
 </nav>
 

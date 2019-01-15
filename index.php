@@ -35,7 +35,10 @@ elseif($url==="roman"){
 
 elseif($url==="chapitre"){
     $chapter = new ChapterController();
-    $chapter->chapter();
+    if(isset($_GET['id']) && !empty($_GET['id'])){
+        $chapter->oneChapter($_GET['id']);
+    }
+    else{echo 'ID inexistant';}
 }
 
 elseif($url==="a-propos"){
@@ -56,33 +59,52 @@ elseif($url==="mentions-legales"){
 //Page admin
 
 elseif($url==="accueil-administrateur"){
-    $admin = new AdminHomeController();
-    $admin->admin();
+    if(isset($_SESSION['pseudo'])) {
+        $admin = new AdminHomeController();
+        $admin->admin();
+    }
+    else{echo 'accès refusé';}
 }
 
 elseif($url==="creer-chapitre"){
+    if(isset($_SESSION['pseudo'])) {
     $create = new AdminCreateController();
     $create->create();
+    }
+    else{echo 'accès refusé';}
 }
 
 elseif($url==="modifier-chapitre"){
+    if(isset($_SESSION['pseudo'])) {
     $edit = new AdminEditController();
     $edit->edit();
+    }
+    else{echo 'accès refusé';}
 }
 
-elseif($url==="accueil-chapitre"){
+elseif($url==="admin-chapitres"){
+    if(isset($_SESSION['pseudo'])) {
     $homeadmin = new AdminChapterController();
     $homeadmin->homeAdmin();
+    }
+    else{echo 'accès refusé';}
 }
 
-elseif($url==="commentaires"){
-    $comments = new AdminCommentsController();
-    $comments->comments();
+elseif($url==="admin-commentaires") {
+    if (isset($_SESSION['pseudo'])) {
+        $comments = new AdminCommentsController();
+        $comments->comments();
+    } else {
+        echo 'accès refusé';
+    }
 }
 
 elseif($url==="page-connection-admin"){
+
     $connectionadmin = new AdminConnectionController();
     $connectionadmin->connectionadmin();
+
+
 }
 
 elseif($url==="admin-auth") {
@@ -93,4 +115,9 @@ elseif($url==="admin-auth") {
         }
     }
 
+}
+
+elseif($url ==="logout") {
+    $adminauth = new AdminConnectionController();
+    $adminauth->logout();
 }

@@ -27,12 +27,21 @@ class ChapterManager extends dbManager
         return $chapters;
     }
 
+    public function getOneChapter(int $id)
+    {
+        $request = $this->db->prepare('SELECT id, title, number, text, DATE_FORMAT(creation_date,\'%d/%m/%y\') AS creationDate FROM chapter WHERE id=?');
+        $request ->execute([$id]);
+        $data = $request->fetch(PDO::FETCH_ASSOC);
+        $chapter = new Chapter($data);
+        return $chapter;
+    }
+
  /**Backend**/
 
     public function addChapter(Chapter $chapter)
     {
         $request = $this->db->prepare('INSERT INTO  chapter (title, creation_date, number, text) VALUES (:title, :creation_date, :number, :text)');
-        $add = $request ->execute([
+        $add = $request->execute([
            'title'=>$chapter->getTitle(),
            'creation_date'=>$chapter->getCreationDate(),
            'number'=>$chapter->getNumber(),

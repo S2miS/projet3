@@ -4,6 +4,18 @@
 </div>
 <nav id="navigation">
     <ul id="icons">
+        <?php
+            if (isset($_SESSION['pseudo'])) {
+        ?>
+        <a href="logout">Déconnexion</a>
+        <?php
+            }
+            else {
+        ?>
+        <a href="page-connection-admin">Connexion</a>
+        <?php
+            }
+        ?>
         <a class="fab fa-facebook" href="ton_lien.html"></a>
         <a class="fab fa-twitter" href="ton_lien.html"></a>
         <a class="fab fa-instagram" href="ton_lien.html"></a>
@@ -16,9 +28,7 @@
     </ul>
 
     <?php
-
     if (isset($_SESSION['pseudo'])){
-
     ?>
     <ul id="adminmenu">
         <li><a href="accueil-administrateur">ACCUEIL</a></li>

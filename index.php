@@ -100,11 +100,8 @@ elseif($url==="admin-commentaires") {
 }
 
 elseif($url==="page-connection-admin"){
-
     $connectionadmin = new AdminConnectionController();
     $connectionadmin->connectionadmin();
-
-
 }
 
 elseif($url==="admin-auth") {

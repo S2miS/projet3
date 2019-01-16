@@ -3,10 +3,6 @@ ob_start();
 
 include('src/Controller/Backend/bdConnect.php') ;
 
-if(!isset($_SESSION['admin'])) {
-header('Location:../connectionPage/connectionPage.php');
-}
-
 $query = $bdd->query('SELECT * from chapter ORDER BY date DESC') ;
 $resultat = $query->fetchAll();
 $nb_row = count($resultat);

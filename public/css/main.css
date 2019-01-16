@@ -132,6 +132,11 @@ font-family: 'Montserrat', sans-serif;
 #homepage {
     font-family: 'Montserrat', sans-serif;
     font-size: x-large;
+    background-image:url("../../../Projet3/images/ecriture.png");
+    background-repeat:no-repeat;
+    background-position:right;
+    background-size: contain;
+
 }
 
 #hometext1 a, #hometext2 a, #hometext3 a {
@@ -175,7 +180,7 @@ font-family: 'Montserrat', sans-serif;
 
 #allchapters {
     font-family: 'Montserrat', sans-serif;
-    background-image:url("http://s1.1zoom.me/big3/499/Many_Book_Library_468620.jpg");
+    background-image:url("../../../Projet3/images/livres.png");
     background-repeat:no-repeat;
     background-position:center center;
     background-size: cover;

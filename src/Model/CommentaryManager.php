@@ -25,17 +25,17 @@ class CommentaryManager extends dbManager
     {
         $request = $this->query('INSERT INTO  comments (pseudo, message) VALUES ($_pseudo, $_message)');
     }
-
-    public function reportComm()
+    /* Passer en requete preparé */
+    public function reportComm(Commentary $comments)
     {
-        $request = $this->query('UPDATE chapter SET reported = 1  WHERE id ='. $this->getId().'');
+        $request = $this->db->query('UPDATE chapter SET reported = 1  WHERE id = $comments->getId()');
     }
-
+    /* Passer en requete preparé */
     public function unreportComm()
     {
         $request = $this->query('UPDATE chapter SET reported = 0  WHERE id ='. $this->getId().'');
     }
-
+    /* Passer en requete preparé */
     public function deleteComm()
     {
         $request = $this->query('DELETE FROM comments WHERE id ='. $this->getId().'');

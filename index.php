@@ -15,13 +15,15 @@ use App\Controller\Backend\AdminEditController;
 use App\Controller\Backend\AdminchapterController;
 use App\Controller\Backend\AdminCommentsController;
 use App\Controller\Backend\AdminConnectionController;
+use App\Model\Chapter;
+use App\Model\Commentary;
 
 $url='';
 if(isset($_GET['url'])){
     $url=$_GET['url'];
 }
 
-//Page visiteur
+// ------------------------------------------------------------------ Page visiteur
 
 if($url==="accueil"){
     $homepage = new HomeController();
@@ -34,9 +36,10 @@ elseif($url==="roman"){
 }
 
 elseif($url==="chapitre"){
+    $chap = new Chapter(['id' => $_GET['id']]);
     $chapter = new ChapterController();
     if(isset($_GET['id']) && !empty($_GET['id'])){
-        $chapter->oneChapter($_GET['id']);
+        $chapter->oneChapter($chap);
     }
     else{echo 'ID inexistant';}
 }
@@ -56,7 +59,16 @@ elseif($url==="mentions-legales"){
     $legal->legal();
 }
 
-//Page admin
+elseif($url ==="report") {
+    $comment = new Commentary(['comm_id' => $_GET['comm_id']]);
+    var_dump($comment);
+    die;
+    if(isset($_GET['comm_id']) && !empty($_GET['comm_id']) && isset($_GET['id']) && !empty($_GET['id'])) {
+        $report = new ChapterController();
+        $report->reportComment($comment, $_GET['id']);
+    }
+}
+// ------------------------------------------------------------------ Page admin
 
 elseif($url==="accueil-administrateur"){
     if(isset($_SESSION['pseudo'])) {

@@ -9,6 +9,7 @@ private $pseudo;
 private $message;
 private $reported;
 private $idchapter;
+private $date;
 
     public function __construct($values = null)
     {
@@ -60,6 +61,10 @@ private $idchapter;
         return $this->idchapter;
     }
 
+    public function getDate(): string
+    {
+        return $this->date;
+    }
     public function setId($id): void
     {
         $this->id = $id;
@@ -70,39 +75,23 @@ private $idchapter;
         $this->idchapter = $idchapter;
     }
 
-    public function setPseudo($pseudo): void
+    public function setDate($date): void
     {
-        if (!is_string($pseudo) && (strlen($pseudo) >= 50)) // S'il le pseudo est trop grand.
-        {
-            trigger_error('Le pseudo doit être une chaine de caractères et ne peut pas dépasser les 50 caractères', E_USER_WARNING);
-            return;
-        }
-        else {
+        $this->date = $date;
+    }
+
+    public function setPseudo(string $pseudo): void
+    {
             $this->pseudo = $pseudo;
-        }
     }
 
-    public function setMessage($message): void
+    public function setMessage(string $message): void
     {
-        if (!is_string($message) && (strlen($message) >= 500)) // S'il ne s'agit pas d'un nombre entier.
-        {
-            trigger_error('Le pseudo doit être une chaine de caractères et ne peut pas dépasser les 500 caractères', E_USER_WARNING);
-            return;
-        }
-        else {
             $this->message = $message;
-        }
     }
 
-    public function setReported($reported): void
+    public function setReported(bool $reported)
     {
-        if (!is_bool($reported)) // S'il ne s'agit pas d'un nombre entier.
-        {
-            trigger_error('Doit être un boolean', E_USER_WARNING);
-            return;
-        }
-        else {
             $this->reported = $reported;
-        }
     }
 }

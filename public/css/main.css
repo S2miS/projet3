@@ -223,6 +223,57 @@ font-family: 'Montserrat', sans-serif;
     font-weight:bold;
 }
 
+/*------------------------------------------------------------------ Chapter ------------------------------------------------------------------*/
+
+#thechapter {
+    font-family: 'Montserrat', sans-serif;
+}
+section h1 {
+    padding-top: 25px;
+    padding-bottom: 25px;
+}
+
+#thetext {
+    line-height: 1.8;
+    padding-right: 15%;
+    padding-left: 15%;
+    text-align: justify;
+}
+#thecomments {
+    display: flex;
+    flex-direction: row;
+    padding-right: 15%;
+    padding-left: 15%;
+
+}
+#thecomments h1 {
+    padding-bottom: 25px;
+}
+
+#commtitle {
+    background-color: #bfbfbf;
+    padding: 5px
+}
+
+#commtitle span {
+    padding-left: 65%;
+}
+
+#commmessage {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 5px;
+}
+
+#commcontent {
+    border: 1px solid black;
+    margin: 25px;
+    width: 50%;
+}
+
+#commcontent input {
+    margin: 5px;
+}
 /*------------------------------------------------------------------ About ------------------------------------------------------------------*/
 
 #about {

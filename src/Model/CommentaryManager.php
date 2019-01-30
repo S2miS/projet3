@@ -13,14 +13,6 @@ class CommentaryManager extends dbManager
         $this->db=self::dbConnect();
     }
 
-    public function viewComm(int $id)
-    {
-        $request = $this->db->prepare('SELECT co.pseudo, co.date, co.message, co.id_chapter FROM comments as co INNER JOIN chapter ON ? = chapter.id = co.id_chapter');
-        $request ->execute([$id]);
-        $data = $request->fetchAll(PDO::FETCH_ASSOC);
-        $comment = new Commentary($data);
-        return $comment;
-    }
     public function addComm($_pseudo, $_message)
     {
         $request = $this->query('INSERT INTO  comments (pseudo, message) VALUES ($_pseudo, $_message)');
@@ -28,16 +20,26 @@ class CommentaryManager extends dbManager
     /* Passer en requete preparé */
     public function reportComm(Commentary $comments)
     {
-        $request = $this->db->query('UPDATE chapter SET reported = 1  WHERE id = $comments->getId()');
+        $request = $this->db->prepare('UPDATE comments SET reported = 1  WHERE id = :id');
+        $report = $request->execute(['id'=>$comments->getId()]);
+        var_dump($comments->getId());
+        die;
+        return $report;
     }
     /* Passer en requete preparé */
-    public function unreportComm()
+    public function unreportComm(Commentary $comments)
     {
-        $request = $this->query('UPDATE chapter SET reported = 0  WHERE id ='. $this->getId().'');
+        $request = $this->prepare('UPDATE comments SET reported = 0  WHERE id = ?');
+        $request->execute([$comments->getId()]);
+        $results = $request->fetchAll(PDO::FETCH_ASSOC);
+        return $results;
     }
     /* Passer en requete preparé */
-    public function deleteComm()
+    public function moderateComm(Commentary $comments)
     {
-        $request = $this->query('DELETE FROM comments WHERE id ='. $this->getId().'');
+        $request = $this->prepare('UPDATE comments WHERE id = ?');
+        $request->execute([$comments->getId()]);
+        $results = $request->fetchAll(PDO::FETCH_ASSOC);
+        return $results;
     }
 }

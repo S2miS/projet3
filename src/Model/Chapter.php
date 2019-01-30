@@ -9,6 +9,7 @@ class Chapter
     private $title;
     private $text;
     private $creation_date;
+    private $comments = [];
 
     public function __construct($values = null)
     {
@@ -85,4 +86,22 @@ class Chapter
     {
         $this->creation_date = $creation_date;
     }
+
+
+    /**
+     * @return mixed
+     */
+    public function getComments(): array
+    {
+        return $this->comments;
+    }
+
+    /**
+     * @param mixed $comments
+     */
+    public function setComments($comments)
+    {
+        $this->comments = $comments;
+    }
 }
+

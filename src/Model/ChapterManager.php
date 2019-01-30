@@ -27,13 +27,28 @@ class ChapterManager extends dbManager
         return $chapters;
     }
 
-    public function getOneChapter(int $id)
+    public function getOneChapterWithComments(Chapter $chapter)
     {
-        $request = $this->db->prepare('SELECT id, title, number, text, DATE_FORMAT(creation_date,\'%d/%m/%y\') AS creationDate FROM chapter WHERE id=?');
-        $request ->execute([$id]);
-        $data = $request->fetch(PDO::FETCH_ASSOC);
-        $chapter = new Chapter($data);
-        return $chapter;
+            $req = $this->db->prepare('SELECT ch.id, co.id AS com_id, co.pseudo, co.message AS com_content, DATE_FORMAT(co.date, \'%d/%m/%Y à %Hh%i\') AS dateCreate, ch.title, ch.number, ch.text, DATE_FORMAT(ch.creation_date, \'%d/%m/%Y\') AS creationDate FROM chapter ch LEFT JOIN comments co ON              co.id_chapter = ch.id WHERE ch.id= ?');
+            $req->execute([$chapter->getId()]);
+            $result = $req->fetchAll(PDO::FETCH_ASSOC);
+            $comments = [];
+            foreach ($result as $data){
+                $chapter->setTitle($data['title']);
+                $chapter->setNumber($data['number']);
+                $chapter->setText($data['text']);
+                $chapter->setCreationDate($data['creationDate']);
+                if ($data['com_id']){
+                    $commentary = new Commentary();
+                    $commentary->setId($data['com_id']);
+                    $commentary->setPseudo($data['pseudo']);
+                    $commentary->setMessage($data['com_content']);
+                    $commentary->setDate($data['dateCreate']);
+                    $comments[] = $commentary;
+                }
+            }
+            $chapter->setComments($comments);
+            return $chapter;
     }
 
  /**Backend**/

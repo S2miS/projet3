@@ -8,6 +8,9 @@ private $id;
 private $pseudo;
 private $message;
 private $reported;
+private $moderate;
+
+
 private $idchapter;
 private $date;
 
@@ -65,6 +68,12 @@ private $date;
     {
         return $this->date;
     }
+
+    public function getModerate(): bool
+    {
+        return $this->moderate;
+    }
+
     public function setId($id): void
     {
         $this->id = $id;
@@ -93,5 +102,10 @@ private $date;
     public function setReported(bool $reported)
     {
             $this->reported = $reported;
+    }
+
+    public function setModerate(bool $moderate): void
+    {
+        $this->moderate = $moderate;
     }
 }

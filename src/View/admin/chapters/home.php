@@ -43,7 +43,5 @@ echo '<h2> Vous avez '.$nb_row.' chapitres en ligne' ;
     echo "<p><a href='create.php'> Créer un chapitre </a></p>" ;
 
 $content = ob_get_clean();
-?>
-<?php
+
 require("src/View/base.php");
-?>

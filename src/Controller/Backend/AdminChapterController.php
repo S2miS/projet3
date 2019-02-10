@@ -15,4 +15,5 @@ class AdminChapterController
     {
         require('src/View/admin/chapters/home.php');
     }
+
 }

@@ -18,8 +18,6 @@ class ChapterController
 
     public function reportComment(Commentary $commentary, $chapter_id)
     {
-        var_dump($commentary);
-        die;
         $reportComment = new CommentaryManager();
         $result = $reportComment->reportComm($commentary);
         header('Location: chapitre&id='. $chapter_id);

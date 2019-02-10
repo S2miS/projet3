@@ -22,8 +22,6 @@ class CommentaryManager extends dbManager
     {
         $request = $this->db->prepare('UPDATE comments SET reported = 1  WHERE id = :id');
         $report = $request->execute(['id'=>$comments->getId()]);
-        var_dump($comments->getId());
-        die;
         return $report;
     }
     /* Passer en requete preparé */

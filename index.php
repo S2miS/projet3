@@ -60,9 +60,7 @@ elseif($url==="mentions-legales"){
 }
 
 elseif($url ==="report") {
-    $comment = new Commentary(['comm_id' => $_GET['comm_id']]);
-    var_dump($comment);
-    die;
+    $comment = new Commentary(['id' => $_GET['comm_id']]);
     if(isset($_GET['comm_id']) && !empty($_GET['comm_id']) && isset($_GET['id']) && !empty($_GET['id'])) {
         $report = new ChapterController();
         $report->reportComment($comment, $_GET['id']);

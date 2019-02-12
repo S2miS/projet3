@@ -102,8 +102,29 @@ elseif($url==="admin-chapitres"){
 
 elseif($url==="admin-commentaires") {
     if (isset($_SESSION['pseudo'])) {
-        $comments = new AdminCommentsController();
-        $comments->comments();
+        $comment = new Commentary();
+        $adminComments = new AdminCommentsController();
+        $adminComments->adminReportedComments($comment);
+    } else {
+        echo 'accès refusé';
+    }
+}
+
+elseif($url==="admin-commentaires-moderation") {
+    if (isset($_SESSION['pseudo'])) {
+        $comment = new Commentary(['id'=>$_GET['id']]);
+        $adminComments = new AdminCommentsController();
+        $adminComments->adminModerateComments($comment);
+    } else {
+        echo 'accès refusé';
+    }
+}
+
+elseif($url==="admin-commentaires-enlever-signalement") {
+    if (isset($_SESSION['pseudo'])) {
+        $comment = new Commentary(['id'=>$_GET['id']]);
+        $adminComments = new AdminCommentsController();
+        $adminComments->adminUnreportedComments($comment);
     } else {
         echo 'accès refusé';
     }

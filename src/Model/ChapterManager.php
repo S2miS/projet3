@@ -29,7 +29,7 @@ class ChapterManager extends dbManager
 
     public function getOneChapterWithComments(Chapter $chapter)
     {
-            $req = $this->db->prepare('SELECT ch.id, co.id AS com_id, co.pseudo, co.message AS com_content, co.moderate, DATE_FORMAT(co.date, \'%d/%m/%Y à %Hh%i\') AS dateCreate, ch.title, ch.number, ch.text, DATE_FORMAT(ch.creation_date, \'%d/%m/%Y\') AS creationDate FROM chapter ch LEFT JOIN comments co ON co.id_chapter = ch.id WHERE ch.id= ?');
+            $req = $this->db->prepare('SELECT ch.id, co.id AS com_id, co.pseudo, co.message AS com_content, co.moderate, co.reported, DATE_FORMAT(co.date, \'%d/%m/%Y à %Hh%i\') AS dateCreate, ch.title, ch.number, ch.text, DATE_FORMAT(ch.creation_date, \'%d/%m/%Y\') AS creationDate FROM chapter ch LEFT JOIN comments co ON co.id_chapter = ch.id WHERE ch.id= ?');
             $req->execute([$chapter->getId()]);
             $result = $req->fetchAll(PDO::FETCH_ASSOC);
             $comments = [];
@@ -45,13 +45,14 @@ class ChapterManager extends dbManager
                     $commentary->setMessage($data['com_content']);
                     $commentary->setDate($data['dateCreate']);
                     $commentary->setModerate($data['moderate']);
+                    $commentary->setReported($data['reported']);
                     $comments[] = $commentary;
                 }
             }
             $chapter->setComments($comments);
             return $chapter;
     }
-
+    
  /**Backend**/
 
     public function addChapter(Chapter $chapter)

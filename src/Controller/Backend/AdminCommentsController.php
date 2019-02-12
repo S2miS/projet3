@@ -8,10 +8,9 @@
 
 namespace App\Controller\Backend;
 
-use App\Model\ChapterManager;
 use App\Model\Commentary;
 use App\Model\CommentaryManager;
-use App\Model\Chapter;
+
 
 
 class AdminCommentsController
@@ -21,10 +20,24 @@ class AdminCommentsController
         require('src/View/admin/comments/comments.php');
     }
 
-    public function adminComments(Chapter $chapter)
+    public function adminReportedComments(Commentary $comments)
     {
-        $adminComments = new ChapterManager();
-        $result = $adminComments->getOneChapterWithComments($chapter);
+        $adminComments = new CommentaryManager();
+        $result = $adminComments->getReportedComm($comments);
         require('src/View/admin/comments/comments.php');
+    }
+
+    public function adminUnreportedComments (Commentary $comments)
+    {
+        $adminUnreportedComments = new CommentaryManager();
+        $result = $adminUnreportedComments->unreportComm($comments);
+        header('Location: admin-commentaires');
+    }
+
+    public function adminModerateComments (Commentary $comments)
+    {
+        $adminModerateComments = new CommentaryManager();
+        $result = $adminModerateComments->moderateComm($comments);
+        header('Location: admin-commentaires');
     }
 }

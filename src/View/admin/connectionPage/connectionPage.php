@@ -11,6 +11,7 @@ ob_start();
         <input type="password" name="mdp" id="mdp" />
 
         <input type="submit" value="Submit">
+    </fieldset>
 </form>
 
 

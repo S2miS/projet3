@@ -9,34 +9,38 @@ ob_start();
 
         </section>
     </div>
-        <section>
-            <h1>Commentaires</h1>
-            <div id="thecomments">
-        <?php
+    <section>
+        <h1>Commentaires</h1>
+        <div id="thecomments">
+            <?php
             foreach ($result->getComments() as $data){
-        ?>
-                <div id="commcontent">
-                    <p id="commtitle"><?= htmlspecialchars($data->getPseudo()) ?>
+            ?>
+            <div id="commcontent">
+                <p id="commtitle"><?= htmlspecialchars($data->getPseudo()) ?>
                     <span>Publié le : <?= htmlspecialchars($data->getDate()) ?></span></p>
+                <?php
+                if ($data->getModerate()== true){
+                    ?>
+                    <p>Ce commentaire a été modéré</p>
                     <?php
-                        if ($data->getModerate()== true){
-                        ?>
-                        <p>Ce commentaire a été modéré</p>
-                        <?php
-                        }
-                        else {
-                            ?>
+                }
+                else {
+                    ?>
                     <p id="commmessage"><?= htmlspecialchars($data->getMessage()) ?></p>
                     <?php
-                        }
-                        ?>
-                    <a href="report&comm_id=<?= $data->getId() ?>&id=<?= $result->getId()?>">Report</a>
-                </div>
+                }
+                if($data->getReported()== false) {
+                    ?>
+                    <a href="report&comm_id=<?= $data->getId() ?>&id=<?= $result->getId() ?>">Report</a>
+                    <?php
+                }
+                ?>
             </div>
+        </div>
         <?php
-            }
+        }
         ?>
-        </section>
+    </section>
 </div>
 
 

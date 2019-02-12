@@ -104,4 +104,3 @@ class Chapter
         $this->comments = $comments;
     }
 }
-

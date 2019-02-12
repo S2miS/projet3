@@ -34,7 +34,5 @@ ob_start();
 </div>
 <?php
 $content = ob_get_clean();
-?>
-<?php
 include("src/View/base.php");
 ?>

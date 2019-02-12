@@ -1,45 +1,51 @@
-<section>
-    <?php
-    include('../../Controller/Backend/bdConnect.php');
-    // include de la bdd pour ne pas avoir à réecrire les informations de connexion à chaque fois
+<?php
+ob_start();
+?>
+<div id="thechapter">
+    <div id="thetext">
+        <section>
+            <h1><?= htmlspecialchars($result->getTitle()) ?></h1>
+            <p><?= htmlspecialchars($result->getText()) ?></p>
 
-    $requete = $bdd->query( 'SELECT * FROM chapter WHERE idchapter = 1' );
-    //Récupérer les données
-    $resultat = $requete->fetchAll();
-    //Afficher les données
-    foreach($resultat as $ligne) :
-        echo '<h2>' ;
-        echo 'Chapitre numéro' ;
-        echo $ligne['numero'];
-        echo '</h2>' ;
-        echo '<h3>' ;
-        echo $ligne['titre'];
-        echo'</h3>' ;
-        echo '<p>' ;
-        echo $ligne['contenu'];
-        echo'</p>' ;
-    endforeach;
-    ?>
+        </section>
+    </div>
+    <section>
+        <h1>Commentaires</h1>
+        <div id="thecomments">
+            <?php
+            foreach ($result->getComments() as $data){
+            ?>
+            <div id="commcontent">
+                <p id="commtitle"><?= htmlspecialchars($data->getPseudo()) ?>
+                    <span>Publié le : <?= htmlspecialchars($data->getDate()) ?></span></p>
+                <?php
+                if ($data->getModerate()== true){
+                    ?>
+                    <p>Ce commentaire a été modéré</p>
+                    <?php
+                }
+                else {
+                    ?>
+                    <p id="commmessage"><?= htmlspecialchars($data->getMessage()) ?></p>
+                    <?php
+                }
+                if($data->getReported()== false) {
+                    ?>
+                    <a href="report&comm_id=<?= $data->getId() ?>&id=<?= $result->getId() ?>">Report</a>
+                    <?php
+                }
+                ?>
+            </div>
+        </div>
+        <?php
+        }
+        ?>
+    </section>
+</div>
 
-</section>
 
-<section>
-    <?php
-    $requete = $bdd->query( 'SELECT * FROM comments WHERE idchapter = 1' );
-    //Récupérer les données
-    $resultat = $requete->fetchAll();
-    //Afficher les données
-    foreach($resultat as $ligne) :
-        echo '<h2>' ;
-        echo 'Pseudo : ' ;
-        echo $ligne['pseudo'];
-        echo '</h2>' ;
-        echo '<h3>' ;
-        echo $ligne['date'];
-        echo'</h3>' ;
-        echo '<p>' ;
-        echo $ligne['contenu'];
-        echo'</p>' ;
-    endforeach;
-    ?>
-</section>
+<?php
+$content = ob_get_clean();
+require("src/View/base.php");
+?>
+

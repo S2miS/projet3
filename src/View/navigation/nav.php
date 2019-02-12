@@ -4,6 +4,18 @@
 </div>
 <nav id="navigation">
     <ul id="icons">
+        <?php
+            if (isset($_SESSION['pseudo'])) {
+        ?>
+        <a href="logout">Déconnexion</a>
+        <?php
+            }
+            else {
+        ?>
+        <a href="page-connection-admin">Connexion</a>
+        <?php
+            }
+        ?>
         <a class="fab fa-facebook" href="ton_lien.html"></a>
         <a class="fab fa-twitter" href="ton_lien.html"></a>
         <a class="fab fa-instagram" href="ton_lien.html"></a>
@@ -15,10 +27,15 @@
         <li><a href="contact">CONTACT</a></li>
     </ul>
 
+    <?php
+    if (isset($_SESSION['pseudo'])){
+    ?>
     <ul id="adminmenu">
-        <li><a href="accueil-admin">ACCUEIL</a></li>
-        <li><a href="commentaires">COMMENTAIRES</a></li>
-        <li><a href="chapitres">CHAPITRES</a></li>
+        <li><a href="accueil-administrateur">ACCUEIL</a></li>
+        <li><a href="admin-commentaires">COMMENTAIRES</a></li>
+        <li><a href="admin-chapitres">CHAPITRES</a></li>
     </ul>
-
 </nav>
+
+<?php }
+?>

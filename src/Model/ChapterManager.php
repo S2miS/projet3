@@ -1,14 +1,9 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: Sim25
- * Date: 13/11/2018
- * Time: 17:36
- */
+
 
 namespace App\Model;
 
-
+use \PDO;
 class ChapterManager extends dbManager
 {
     protected $db;
@@ -17,19 +12,77 @@ class ChapterManager extends dbManager
     {
         $this->db=self::dbConnect();
     }
+  /**Frontend**/
 
-    public function addChapter($_number, $_title, $_text, $_date)
+    public function getAllChapters()
     {
-        $request = $this->db->query('INSERT INTO  chapter (title, date, number, text) VALUES ($_title, $_date, $_numero, $_text)');
+        $request = $this->db->query('SELECT id, title, number, text, DATE_FORMAT(creation_date,\'%d/%m/%y\') AS creationDate FROM chapter ORDER BY creation_date DESC');
+        $results = $request->fetchAll(PDO::FETCH_ASSOC);
+        $chapters = [];
+        foreach($results as $data)
+        {
+            $objArticle = new Chapter($data);
+            $chapters[] = $objArticle;
+        }
+        return $chapters;
     }
 
-    public function editChapter($_number, $_title, $_text, $_date)
+    public function getOneChapterWithComments(Chapter $chapter)
     {
-        $request = $this->db->query('UPDATE chapter SET title = $_titre, date = $_date, number = $_number, text = $_text WHERE idchapter ='. $this->getIdChapter().'');
+            $req = $this->db->prepare('SELECT ch.id, co.id AS com_id, co.pseudo, co.message AS com_content, co.moderate, co.reported, DATE_FORMAT(co.date, \'%d/%m/%Y à %Hh%i\') AS dateCreate, ch.title, ch.number, ch.text, DATE_FORMAT(ch.creation_date, \'%d/%m/%Y\') AS creationDate FROM chapter ch LEFT JOIN comments co ON co.id_chapter = ch.id WHERE ch.id= ?');
+            $req->execute([$chapter->getId()]);
+            $result = $req->fetchAll(PDO::FETCH_ASSOC);
+            $comments = [];
+            foreach ($result as $data){
+                $chapter->setTitle($data['title']);
+                $chapter->setNumber($data['number']);
+                $chapter->setText($data['text']);
+                $chapter->setCreationDate($data['creationDate']);
+                if ($data['com_id']){
+                    $commentary = new Commentary();
+                    $commentary->setId($data['com_id']);
+                    $commentary->setPseudo($data['pseudo']);
+                    $commentary->setMessage($data['com_content']);
+                    $commentary->setDate($data['dateCreate']);
+                    $commentary->setModerate($data['moderate']);
+                    $commentary->setReported($data['reported']);
+                    $comments[] = $commentary;
+                }
+            }
+            $chapter->setComments($comments);
+            return $chapter;
+    }
+    
+ /**Backend**/
+
+    public function addChapter(Chapter $chapter)
+    {
+        $request = $this->db->prepare('INSERT INTO  chapter (title, creation_date, number, text) VALUES (:title, :creation_date, :number, :text)');
+        $add = $request->execute([
+           'title'=>$chapter->getTitle(),
+           'creation_date'=>$chapter->getCreationDate(),
+           'number'=>$chapter->getNumber(),
+           'text'=>$chapter->getText()
+        ]);
     }
 
-    public function deleteChapter()
+    public function editChapter(Chapter $chapter)
     {
-        $request = $this->db->query('DELETE FROM chapter WHERE idchapter ='. $this->getIdChapter().'');
+        $request = $this->db->prepare('UPDATE chapter SET title =:title, number =:number, text =:text WHERE id=:id');
+        $edit = $request->execute([
+            'id'=>$chapter->getId(),
+            'title'=>$chapter->getTitle(),
+            'number'=>$chapter->getNumber(),
+            'text'=>$chapter->getText()
+        ]);
+        return $edit;
     }
+
+    public function deleteChapter(int $id)
+    {
+        $request = $this->db->prepare('DELETE FROM chapter WHERE id=?');
+        $delete = $request->execute([$id]);
+        return $delete;
+    }
+
 }

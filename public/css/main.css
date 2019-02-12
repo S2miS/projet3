@@ -2,7 +2,7 @@
 @font-face {
 font-family: 'Montserrat', sans-serif;
 }
-/* Navigation */
+/*------------------------------------------------------------------ Navigation ------------------------------------------------------------------*/
 
 #authorname {
     text-align: center;
@@ -50,7 +50,7 @@ font-family: 'Montserrat', sans-serif;
 }
 
 
-/*Footer */
+/*------------------------------------------------------------------ Footer ------------------------------------------------------------------*/
 
 #footer {
     background-color: rgb(162, 196, 201);
@@ -107,7 +107,7 @@ font-family: 'Montserrat', sans-serif;
     padding-right: 10px;
 }
 
-    /*Homepage*/
+    /*------------------------------------------------------------------ Homepage ------------------------------------------------------------------*/
 
 #home-title {
     text-align: center;
@@ -132,6 +132,11 @@ font-family: 'Montserrat', sans-serif;
 #homepage {
     font-family: 'Montserrat', sans-serif;
     font-size: x-large;
+    background-image:url("../../../Projet3/images/ecriture.png");
+    background-repeat:no-repeat;
+    background-position:right;
+    background-size: contain;
+
 }
 
 #hometext1 a, #hometext2 a, #hometext3 a {
@@ -151,10 +156,34 @@ font-family: 'Montserrat', sans-serif;
     font-weight: 700;
 }
 
-/* AllChapters */
+#homechapters {
+    font-family: 'Montserrat', sans-serif;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+#homechapters a {
+    font-weight: bold;
+    display: flex;
+    flex-direction: row;
+    padding-bottom: 25px;
+    padding-top: 25px;
+}
+
+.inline-chapters {
+    width: 25vw;
+    text-align: justify;
+    padding-bottom: 25px;
+}
+
+/*------------------------------------------------------------------ AllChapters ------------------------------------------------------------------*/
 
 #allchapters {
     font-family: 'Montserrat', sans-serif;
+    background-image:url("../../../Projet3/images/livres.png");
+    background-repeat:no-repeat;
+    background-position:center center;
+    background-size: cover;
 }
 #allchapters h3 {
     text-align: center;
@@ -163,11 +192,21 @@ font-family: 'Montserrat', sans-serif;
     padding-top: 10px;
     padding-bottom: 10px;
 }
-#allchapters p {
+#Summary p {
     padding-right: 25%;
     padding-left: 25%;
     line-height: 1.8;
+    text-align: center;
+    text-align: justify;
 }
+
+#chapterslist {
+    padding-right: 1px;
+    padding-left: 1px;
+    line-height: 1.8;
+    text-align: center;
+}
+
 #allchapters h4 {
     text-align: center;
     padding-top: 25px;
@@ -176,7 +215,66 @@ font-family: 'Montserrat', sans-serif;
     font-weight: bold;
 }
 
-/* About */
+#chapterslist {
+    text-align: center;
+    padding: 10px;
+}
+#chapterslist a:hover {
+    font-weight:bold;
+}
+
+/*------------------------------------------------------------------ Chapter ------------------------------------------------------------------*/
+
+#thechapter {
+    font-family: 'Montserrat', sans-serif;
+}
+section h1 {
+    padding-top: 25px;
+    padding-bottom: 25px;
+}
+
+#thetext {
+    line-height: 1.8;
+    padding-right: 15%;
+    padding-left: 15%;
+    text-align: justify;
+}
+#thecomments {
+    display: flex;
+    flex-direction: row;
+    padding-right: 15%;
+    padding-left: 15%;
+
+}
+#thecomments h1 {
+    padding-bottom: 25px;
+}
+
+#commtitle {
+    background-color: #bfbfbf;
+    padding: 5px
+}
+
+#commtitle span {
+    padding-left: 65%;
+}
+
+#commmessage {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 5px;
+}
+
+#commcontent {
+    border: 1px solid black;
+    margin: 25px;
+    width: 50%;
+}
+
+#commcontent input {
+    margin: 5px;
+}
+/*------------------------------------------------------------------ About ------------------------------------------------------------------*/
 
 #about {
     font-family: 'Montserrat', sans-serif;
@@ -224,14 +322,253 @@ font-family: 'Montserrat', sans-serif;
 #allbooks {
     flex-flow: column;
     display: flex;
+    padding: 0;
+    margin: 0;
+}
+
+#allbooks td {
+    line-height: 1.5em;
 }
 
 #about tr td:first-child {
     font-weight: bold;
-    width: 800px;
+    min-width: 350px;
 }
 
 #about tr td:last-child {
     text-align: justify;
 }
 
+/*------------------------------------------------------------------ Contact ------------------------------------------------------------------*/
+
+body {
+    background: #F2F3EB;
+}
+
+button {
+    overflow: visible;
+}
+
+button, select {
+    text-transform: none;
+}
+
+button, input, select, textarea {
+    color: #5A5A5A;
+    font: inherit;
+    margin: 0;
+}
+
+input {
+    line-height: normal;
+}
+
+textarea {
+    overflow: auto;
+}
+
+#container {
+    font-family: 'Montserrat', Arial, sans-serif;
+    border: solid 3px #474544;
+    max-width: 768px;
+    margin: 60px auto;
+    position: relative;
+    padding: 20px;
+}
+
+form {
+    padding: 37.5px;
+    margin: 50px 0;
+}
+
+h1 {
+    color: #474544;
+    font-size: 32px;
+    font-weight: 700;
+    letter-spacing: 7px;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.underline {
+    border-bottom: solid 2px #474544;
+    margin: 1em auto;
+    width: 80px;
+}
+
+.icon_wrapper {
+    margin: 50px 0;
+    width: 100%;
+}
+
+.icon {
+    display: block;
+    fill: #474544;
+    height: 50px;
+    margin: 0 auto;
+    width: 50px;
+}
+
+.email {
+    float: right;
+    width: 45%;
+}
+
+input[type='text'], [type='email'], select, textarea {
+    background: none;
+    border: none;
+    border-bottom: solid 2px #474544;
+    color: #474544;
+    font-size: 1.000em;
+    font-weight: 400;
+    letter-spacing: 1px;
+    margin: 0em 0 1.875em 0;
+    padding: 0 0 0.875em 0;
+    text-transform: uppercase;
+    width: 100%;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    -o-box-sizing: border-box;
+    box-sizing: border-box;
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    -ms-transition: all 0.3s;
+    -o-transition: all 0.3s;
+    transition: all 0.3s;
+}
+
+input[type='text']:focus, [type='email']:focus, textarea:focus {
+    outline: none;
+    padding: 0 0 0.875em 0;
+}
+
+.message {
+    float: none;
+}
+
+.name {
+    float: left;
+    width: 45%;
+}
+
+select {
+    background: url('https://cdn4.iconfinder.com/data/icons/ionicons/512/icon-ios7-arrow-down-32.png') no-repeat right;
+    outline: none;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+}
+
+select::-ms-expand {
+    display: none;
+}
+
+.subject {
+    width: 100%;
+}
+
+.title {
+    width: 100%;
+}
+
+textarea {
+    line-height: 150%;
+    height: 150px;
+    resize: none;
+    width: 100%;
+}
+
+::-webkit-input-placeholder {
+    color: #474544;
+}
+
+:-moz-placeholder {
+    color: #474544;
+    opacity: 1;
+}
+
+::-moz-placeholder {
+    color: #474544;
+    opacity: 1;
+}
+
+:-ms-input-placeholder {
+    color: #474544;
+}
+
+#form_button {
+    background: none;
+    border: solid 2px #474544;
+    color: #474544;
+    cursor: pointer;
+    display: inline-block;
+    font-family: 'Helvetica', Arial, sans-serif;
+    font-size: 0.875em;
+    font-weight: bold;
+    outline: none;
+    padding: 20px 35px;
+    text-transform: uppercase;
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    -ms-transition: all 0.3s;
+    -o-transition: all 0.3s;
+    transition: all 0.3s;
+}
+
+#form_button:hover {
+    background: #474544;
+    color: #F2F3EB;
+}
+
+@media screen and (max-width: 768px) {
+    #container {
+        margin: 20px auto;
+        width: 95%;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    h1 {
+        font-size: 26px;
+    }
+
+    .underline {
+        width: 68px;
+    }
+
+    #form_button {
+        padding: 15px 25px;
+    }
+}
+
+@media screen and (max-width: 420px) {
+    h1 {
+        font-size: 18px;
+    }
+
+    .icon {
+        height: 35px;
+        width: 35px;
+    }
+
+    .underline {
+        width: 53px;
+    }
+
+    input[type='text'], [type='email'], select, textarea {
+        font-size: 0.875em;
+    }
+}
+
+/*------------------------------------------------------------------ LegalNotice ------------------------------------------------------------------*/
+#legalnotice {
+    font-family: 'Montserrat', sans-serif;
+    padding: 25px;
+}
+#legalnotice h3 {
+    text-align: center;
+    padding-top: 25px;
+    padding-bottom: 25px;
+    font-size: x-large;
+    font-weight: 700;
+}

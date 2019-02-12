@@ -1,9 +1,12 @@
+<?php
+ob_start();
+?>
 <html>
 <head>
     <meta charset="utf-8">
-    <title>Roman - Jean Forteroche</title>
     <link rel="stylesheet" type="text/css" href="../../../public/css/main.css" media="all" />
 </head>
+<div id="legalnotice">
 <h3>Mentions légales</h3>
 <p>Aliquam nec mi dolor. Donec varius gravida tincidunt. Sed at ante viverra, gravida odio a, egestas dolor. Pellentesque lorem lacus, lobortis quis porta vitae, malesuada eget tortor. Aenean sagittis mi ac bibendum efficitur. Mauris mi neque, congue ut arcu vitae, dignissim pellentesque justo. Donec eleifend maximus ipsum. Phasellus in dui elementum, ultrices eros quis, iaculis diam. Donec et leo orci. Mauris finibus augue et accumsan euismod. Nunc velit justo, commodo et tellus cursus, rhoncus dignissim neque. Integer blandit metus sit amet nisi ultrices fermentum. Cras tempor sagittis pretium.
 
@@ -36,3 +39,11 @@
     Integer ultricies suscipit risus et maximus. Proin lobortis ligula in neque commodo accumsan ac a ante. Phasellus eget elit tellus. Vestibulum posuere venenatis leo ac blandit. Pellentesque quis vestibulum nisi. Cras vulputate lectus non lorem rhoncus, in tincidunt erat ornare. Suspendisse bibendum lacus sed commodo pellentesque. Aliquam erat volutpat. Mauris mauris augue, dictum at tellus vel, elementum posuere metus. Pellentesque eget nibh quam. Quisque condimentum quis elit in maximus. Quisque vestibulum lacus massa, non convallis mauris maximus feugiat. Donec in nunc nulla. Donec tincidunt magna ac nisl porttitor scelerisque.
 
     Integer eu condimentum dui. Nam non pellentesque nunc. Curabitur dictum, justo in feugiat pretium, erat turpis tristique nibh, pellentesque vulputate enim leo luctus turpis. Nullam convallis nisl vehicula ex accumsan sagittis. Morbi vel placerat sapien. In hac habitasse platea dictumst. Nulla in cursus dolor. Fusce id finibus sem, in mollis nisl. Aliquam tortor dui, dictum nec arcu eu, placerat rhoncus sem. Fusce lorem nisi, volutpat eget suscipit non, faucibus in ipsum. Aenean eu volutpat neque. Donec ultricies dapibus semper.</p>
+</div>
+<?php
+$content = ob_get_clean();
+?>
+<?php
+require("src/View/base.php");
+?>
+

@@ -1,33 +1,35 @@
 <?php
 ob_start();
 
-session_start();
 include('src/Controller/Backend/bdConnect.php') ;
+ ?>
+<script>
+    tinymce.init({
+        selector: 'textarea#textarea',
+        language: 'fr_FR',
+        height: 500
+    });
+</script>
 
-if(!isset($_SESSION['admin'])) {
-    header('Location:../connectionPage/connectionPage.php');
-}
+<form action="modifier-chapitre&id=<?= $_GET['id'] ; ?>" method="post">
+    <div>
+        <label for="title">Titre :</label>
+        <input type="text" id="title" name="title" value="<?= $result->getTitle() ; ?>">
+    </div>
+    <div>
+        <label for="number">Numéro de chapitre :</label>
+        <input type="number" id="number" name="number" min="0" step="1" value="<?= $result->getNumber() ; ?>">
+    </div>
+    <div>
+        <label for="textarea">Contenu :</label>
+        <textarea  id="textarea" name="textarea"><?= htmlspecialchars($result->getText()) ; ?></textarea>
+    </div>
+    <button class="bouton" type="submit" onclick="return confirm('Valider la modification ?')">
+        Envoyer
+    </button>
+</form>
 
-if(isset($_GET['id'])) {
-    $id = $_GET['id'] ;
-}
-else {
-    header('Location:home.php');
-}
-
-$query = $bdd->query('SELECT * FROM chapter WHERE idchapter = '.$id.'') ;
-$resultat = $query->fetchAll();
-
-foreach($resultat as $ligne) :
-    echo '<form method="POST" action="traitement.php">' ;
-    echo '<label for="id"> ID de chapitre </label> <input readonly type="text" name="id" id="id" value="'.$ligne['idchapter'].' "/>' ;
-    echo '<label for="number"> Numéro de chapitre </label> <input type="text" name="number" id="number" value="'.$ligne['number'].'"/>' ;
-    echo '<label for="title"> Titre de chapitre </label> <input type="text" name="title" id="title" value="'.$ligne['title'].'"/>' ;
-    echo '<label for="date"> Date de publication </label> <input type="datetime" name="date" id="date" value="'.$ligne['date'].'"/>' ;
-    echo '<label for="text"> Contenu </label> <input type="text" name="text" id="text" value="'.$ligne['text'].'"/>' ;
-    echo '<input type="submit" value="Submit">' ;
-    echo '</form>' ;
-endforeach;
+<?php
 
 $content = ob_get_clean();
 ?>

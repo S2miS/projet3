@@ -12,6 +12,7 @@ use App\Controller\Frontend\LegalController;
 use App\Controller\Backend\AdminHomeController;
 use App\Controller\Backend\AdminCreateController;
 use App\Controller\Backend\AdminEditController;
+use App\Controller\Backend\AdminDeleteController ;
 use App\Controller\Backend\AdminchapterController;
 use App\Controller\Backend\AdminCommentsController;
 use App\Controller\Backend\AdminConnectionController;
@@ -43,6 +44,12 @@ elseif($url==="chapitre"){
     }
     else{echo 'ID inexistant';}
 }
+
+elseif($url==="chapitre-creer-commentaire") {
+    $comment = new Commentary(['pseudo'=>$_POST['user_name'], 'message'=>$_POST['user_message'], 'id_chapter'=>$_GET['chapterid']]);
+    $addComments = new ChapterController();
+    $addComments->addComment($comment);
+    }
 
 elseif($url==="a-propos"){
     $about = new AboutController();
@@ -87,7 +94,24 @@ elseif($url==="creer-chapitre"){
 elseif($url==="modifier-chapitre"){
     if(isset($_SESSION['pseudo'])) {
     $edit = new AdminEditController();
-    $edit->edit();
+    //var_dump(intval($_GET['id'])) ; die ;
+    $edit->edit(intval($_GET['id']), $_POST['title'], intval($_POST['number']), $_POST['textarea']);
+    }
+    else{echo 'accès refusé';}
+}
+
+elseif($url==="supprimer-chapitre"){
+    if(isset($_SESSION['pseudo'])) {
+        $delete = new AdminDeleteController();
+        $delete->delete($_GET['id']);
+    }
+    else{echo 'accès refusé';}
+}
+
+elseif($url==="edit-chapitre"){
+    if(isset($_SESSION['pseudo'])) {
+        $create = new AdminEditController();
+        $create->editForm($_GET['id']);
     }
     else{echo 'accès refusé';}
 }
@@ -112,7 +136,7 @@ elseif($url==="admin-commentaires") {
 
 elseif($url==="admin-commentaires-moderation") {
     if (isset($_SESSION['pseudo'])) {
-        $comment = new Commentary(['id'=>$_GET['id']]);
+        $comment = new Commentary();
         $adminComments = new AdminCommentsController();
         $adminComments->adminModerateComments($comment);
     } else {
@@ -128,6 +152,18 @@ elseif($url==="admin-commentaires-enlever-signalement") {
     } else {
         echo 'accès refusé';
     }
+}
+
+elseif($url==="admin-creer-chapitre"){
+
+    $numero = intval($_POST['number']) ;
+    if(isset($_SESSION['pseudo'])) {
+        $chapter = new Chapter(['title'=>$_POST['title'], 'number'=>$numero, 'text'=>$_POST['textarea']]);
+        $addChapter = new AdminCreateController();
+        //var_dump($chapter) ;
+        $addChapter->addChapter($chapter);
+    }
+    else{echo 'accès refusé';}
 }
 
 elseif($url==="page-connection-admin"){
@@ -149,3 +185,4 @@ elseif($url ==="logout") {
     $adminauth = new AdminConnectionController();
     $adminauth->logout();
 }
+

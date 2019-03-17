@@ -3,6 +3,7 @@ ob_start();
 ?>
     <section>
         <h1>Commentaires signalés</h1>
+        <a href="admin-commentaires-moderation">Vers les commentaires modérés</a>
         <div id="thecomments">
             <?php
             foreach ($result as $data){

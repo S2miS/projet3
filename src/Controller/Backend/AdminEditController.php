@@ -28,6 +28,13 @@ class AdminEditController
         $data->setText($text);
         $chapterManager = new ChapterManager();
         $chapter = $chapterManager->editChapter($data);
-        header('Location: action=accueil-chapitre');
+        header('Location: admin-chapitres');
+    }
+
+    public function editForm(int $id)
+    {
+        $edit = new ChapterManager();
+        $result = $edit->getOneChapter($id);
+        require('src/View/admin/chapters/edit.php');
     }
 }

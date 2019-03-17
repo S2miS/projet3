@@ -1,47 +1,84 @@
 <?php
 ob_start();
 
-include('src/Controller/Backend/bdConnect.php') ;
+?>
 
-$query = $bdd->query('SELECT * from chapter ORDER BY date DESC') ;
-$resultat = $query->fetchAll();
-$nb_row = count($resultat);
+        <h1 id="chap-title">Chapitres</h1>
+        <a id = "chap-create" href="creer-chapitre"> CREER CHAPITRE </a>
+        <div id="thechapters">
 
-echo '<h2> Vous avez '.$nb_row.' chapitres en ligne' ;
+            <table>
+                <thead>
+                    <td>TITRE</td>
+                    <td>NUMERO</td>
+                    <td>DATE DE PUBLICATION</td>
+                    <td> </td>
+                    <td> </td>
+                </thead>
+            <?php
+            foreach ($result as $data):
+            ?>
+            <tr>
+                <td> <?= $data->getTitle() ?></td>
+                <td> <?= $data->getNumber() ?></td>
+                <td> <?= $data->getCreationDate() ?></td>
+                <td class="modif"> <a href="edit-chapitre&id=<?= $data->getId() ?>"> Editer </a> </td>
+                <td class="modif"> <a href="supprimer-chapitre&id=<?= $data->getId() ?>" onclick="return confirm('Voulez-vous supprimer ?')" title="supprimer"> Supprimer </a></td>
+            </tr>
 
-    foreach($resultat as $ligne) :
-    echo '<table>' ;
-        echo '<tr>' ;
-            echo '<th> Edition </th>' ;
-            echo '<th> Numéro </th>' ;
-            echo '<th> Titre </th>' ;
-            echo '<th> Date </th>' ;
-            echo '<th> Contenu </th>' ;
-            echo '</tr>' ;
-        echo '</th>' ;
+        <?php endforeach ;?>
+            </table>
+        </div>
 
-        echo '<tr>' ;
-            echo '<td>' ;
-                echo '<a href="edit.php?id='.$ligne['idchapter'].'"> Editer ce chapitre </a>' ;
-                echo '</td>' ;
-            echo '<td>' ;
-                echo $ligne['number'] ;
-                echo '</td>' ;
-            echo '<td>' ;
-                echo $ligne['title'] ;
-                echo '</td>' ;
-            echo '<td>' ;
-                echo $ligne['date'] ;
-                echo '</td>' ;
-            echo '<td>' ;
-                echo $ligne['text'] ;
-                echo '</td>' ;
-            echo '</tr>' ;
-        echo '</table>' ;
-    endforeach;
+<style>
 
-    echo "<p><a href='create.php'> Créer un chapitre </a></p>" ;
+    .modif {
+        font-weight: 700 ;
+        border : 2px solid black ;
+    }
+
+    #thechapters {
+        display : flex ;
+        justify-content: center ;
+        flex-flow : column ;
+    }
+
+    #chap-title {
+        font-size : 3rem ;
+        color : #474544;
+        font-weight: 900;
+        margin : 2% 0 3% 0 ;
+    }
+
+    #chap-create {
+        border : 2px solid black ;
+        margin : 2% 45% 2% 45% ;
+        padding : 1% 2% 1% 2% ;
+    }
+
+    #thechapters table {
+        line-height: 2rem;
+        margin : 4% 5% 2% 5% ;
+    }
+    #thechapters table td {
+        width : 20% ;
+        text-align : center ;
+        /*border : 1px solid black ;*/
+    }
+
+    #thechapters tr:nth-child(even) {
+        background-color : lightgrey;
+    }
+
+    #thechapters table thead {
+        background-color : #B6D7A8;
+        text-align : center ;
+        font-weight : 700 ;
+    }
+
+</style>
+<?php
 
 $content = ob_get_clean();
 
-require("src/View/base.php");
+require("src/View/base.php"); ?>

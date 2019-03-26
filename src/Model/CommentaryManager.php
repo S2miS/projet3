@@ -32,9 +32,30 @@ class CommentaryManager extends dbManager
             return $comments;
     }
 
-    public function addComm($_pseudo, $_message)
+    public function getModerateComm(Commentary $comments)
     {
-        $request = $this->query('INSERT INTO  comments (pseudo, message) VALUES ($_pseudo, $_message)');
+        $req = $this->db->query('SELECT id, pseudo, message, reported, moderate, id_chapter, DATE_FORMAT(date, \'%d/%m/%Y à %Hh%i\') AS dateCreate FROM comments WHERE reported = 1 AND moderate = 1');
+        $results = $req->fetchAll(PDO::FETCH_ASSOC);
+        $comments = [];
+        foreach ($results as $data){
+            $commentary = new Commentary();
+            $commentary->setId($data['id']);
+            $commentary->setPseudo($data['pseudo']);
+            $commentary->setMessage($data['message']);
+            $commentary->setDate($data['dateCreate']);
+            $commentary->setReported($data['reported']);
+            $commentary->setModerate($data['moderate']);
+            $commentary->setIdchapter($data['id_chapter']);
+            $comments[] = $commentary;
+        }
+        return $comments;
+    }
+
+    public function addComm(Commentary $comments)
+    {
+        $request = $this->db->prepare('INSERT INTO  comments (pseudo, message, id_chapter) VALUES (:pseudo, :message, :idchapter)');
+        $add = $request->execute(['pseudo'=>$comments->getPseudo(), 'message'=>$comments->getMessage(), 'idchapter'=>$comments->getIdchapter()]);
+        return $add;
     }
     
     public function reportComm(Commentary $comments)

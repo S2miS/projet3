@@ -30,14 +30,14 @@ class AdminCommentsController
     public function adminUnreportedComments (Commentary $comments)
     {
         $adminUnreportedComments = new CommentaryManager();
-        $result = $adminUnreportedComments->unreportComm($comments);
+        $result = $adminUnreportedComments->getUnreportedComm($comments);
         header('Location: admin-commentaires');
     }
 
     public function adminModerateComments (Commentary $comments)
     {
         $adminModerateComments = new CommentaryManager();
-        $result = $adminModerateComments->moderateComm($comments);
-        header('Location: admin-commentaires');
+        $results = $adminModerateComments->getModerateComm($comments);
+        require('src/View/admin/comments/moderatecomments.php');
     }
 }

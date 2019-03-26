@@ -15,8 +15,21 @@ class ChapterManager extends dbManager
   /**Frontend**/
 
     public function getAllChapters()
+{
+    $request = $this->db->query('SELECT id, title, number, text, DATE_FORMAT(creation_date,\'%d/%m/%y\') AS creationDate FROM chapter ORDER BY creation_date DESC');
+    $results = $request->fetchAll(PDO::FETCH_ASSOC);
+    $chapters = [];
+    foreach($results as $data)
     {
-        $request = $this->db->query('SELECT id, title, number, text, DATE_FORMAT(creation_date,\'%d/%m/%y\') AS creationDate FROM chapter ORDER BY creation_date DESC');
+        $objArticle = new Chapter($data);
+        $chapters[] = $objArticle;
+    }
+    return $chapters;
+}
+
+    public function getLastChapters()
+    {
+        $request = $this->db->query('SELECT id, title, number, text, DATE_FORMAT(creation_date,\'%d/%m/%y\') AS creationDate FROM chapter ORDER BY creation_date DESC LIMIT 3');
         $results = $request->fetchAll(PDO::FETCH_ASSOC);
         $chapters = [];
         foreach($results as $data)
@@ -57,13 +70,13 @@ class ChapterManager extends dbManager
 
     public function addChapter(Chapter $chapter)
     {
-        $request = $this->db->prepare('INSERT INTO  chapter (title, creation_date, number, text) VALUES (:title, :creation_date, :number, :text)');
+        $request = $this->db->prepare('INSERT INTO  chapter (title, number, text) VALUES (:title, :number, :text)');
         $add = $request->execute([
            'title'=>$chapter->getTitle(),
-           'creation_date'=>$chapter->getCreationDate(),
            'number'=>$chapter->getNumber(),
            'text'=>$chapter->getText()
         ]);
+        return $add ;
     }
 
     public function editChapter(Chapter $chapter)
@@ -75,6 +88,7 @@ class ChapterManager extends dbManager
             'number'=>$chapter->getNumber(),
             'text'=>$chapter->getText()
         ]);
+        //var_dump($edit); die;
         return $edit;
     }
 
@@ -83,6 +97,31 @@ class ChapterManager extends dbManager
         $request = $this->db->prepare('DELETE FROM chapter WHERE id=?');
         $delete = $request->execute([$id]);
         return $delete;
+    }
+
+    public function getOneChapter(int $id)
+    {
+        $chapter = new Chapter ;
+        $req = $this->db->prepare('SELECT ch.id, ch.title, ch.number, ch.text FROM chapter ch WHERE ch.id= ?');
+        $req->execute([$id]);
+        $result = $req->fetchAll(PDO::FETCH_ASSOC);
+        foreach ($result as $data){
+            $chapter->setTitle($data['title']);
+            $chapter->setNumber($data['number']);
+            $chapter->setText($data['text']);
+        }
+        return $chapter;
+    }
+
+    public function uniqueNumber($number)
+    {
+        $req = $this->db->prepare('SELECT ch.number FROM chapter ch WHERE ch.number= ?');
+        $req->execute([$number]);
+        $result = $req->fetch(PDO::FETCH_ASSOC);
+        if($result==true){
+            return true;
+        }
+        return false;
     }
 
 }

@@ -2,6 +2,22 @@
 @font-face {
 font-family: 'Montserrat', sans-serif;
 }
+
+/*------------------------------------------------------------------ General ------------------------------------------------------------------*/
+
+h1 {
+    color: #474544;
+    font-size: 32px;
+    font-weight: 700;
+    letter-spacing: 7px;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif ;
+}
+
 /*------------------------------------------------------------------ Navigation ------------------------------------------------------------------*/
 
 #authorname {
@@ -129,6 +145,10 @@ font-family: 'Montserrat', sans-serif;
     padding-top: 100px;
     padding-bottom: 100px;
 }
+
+#hometext1 p, #hometext2 p, #hometext3 p {
+    font-size : 1.2rem ;
+}
 #homepage {
     font-family: 'Montserrat', sans-serif;
     font-size: x-large;
@@ -143,7 +163,7 @@ font-family: 'Montserrat', sans-serif;
     margin-left: 100px;
     margin-right: 100px;
     padding: 10px;
-    color: #EA9999;
+    color: black ;
     border: 3px #EA9999 solid;
     text-decoration: none;
 }
@@ -241,7 +261,8 @@ section h1 {
 }
 #thecomments {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
+    align-items: center ;
     padding-right: 15%;
     padding-left: 15%;
 
@@ -252,11 +273,10 @@ section h1 {
 
 #commtitle {
     background-color: #bfbfbf;
-    padding: 5px
-}
-
-#commtitle span {
-    padding-left: 65%;
+    padding: 5px ;
+    display : flex ;
+    flex-direction: row ;
+    justify-content: space-between;
 }
 
 #commmessage {
@@ -268,7 +288,7 @@ section h1 {
 #commcontent {
     border: 1px solid black;
     margin: 25px;
-    width: 50%;
+    width: 80%;
 }
 
 #commcontent input {
@@ -341,29 +361,25 @@ section h1 {
 
 /*------------------------------------------------------------------ Contact ------------------------------------------------------------------*/
 
-body {
-    background: #F2F3EB;
-}
-
-button {
+.contact_form button {
     overflow: visible;
 }
 
-button, select {
+.contact_form button, select {
     text-transform: none;
 }
 
-button, input, select, textarea {
+.contact_form button, input, select, textarea {
     color: #5A5A5A;
     font: inherit;
     margin: 0;
 }
 
-input {
+.contact_form input {
     line-height: normal;
 }
 
-textarea {
+.contact_form textarea {
     overflow: auto;
 }
 
@@ -376,12 +392,12 @@ textarea {
     padding: 20px;
 }
 
-form {
+.contact_form form {
     padding: 37.5px;
     margin: 50px 0;
 }
 
-h1 {
+.contact_form h1 {
     color: #474544;
     font-size: 32px;
     font-weight: 700;
@@ -414,7 +430,7 @@ h1 {
     width: 45%;
 }
 
-input[type='text'], [type='email'], select, textarea {
+.contact_form input[type='text'], [type='email'], .contact_form select, .contact_form textarea {
     background: none;
     border: none;
     border-bottom: solid 2px #474544;
@@ -438,7 +454,7 @@ input[type='text'], [type='email'], select, textarea {
     transition: all 0.3s;
 }
 
-input[type='text']:focus, [type='email']:focus, textarea:focus {
+.contact_form input[type='text']:focus, [type='email']:focus, .contact_form textarea:focus {
     outline: none;
     padding: 0 0 0.875em 0;
 }
@@ -452,14 +468,14 @@ input[type='text']:focus, [type='email']:focus, textarea:focus {
     width: 45%;
 }
 
-select {
+.contact_form select {
     background: url('https://cdn4.iconfinder.com/data/icons/ionicons/512/icon-ios7-arrow-down-32.png') no-repeat right;
     outline: none;
     -moz-appearance: none;
     -webkit-appearance: none;
 }
 
-select::-ms-expand {
+.contact_form select::-ms-expand {
     display: none;
 }
 
@@ -471,7 +487,7 @@ select::-ms-expand {
     width: 100%;
 }
 
-textarea {
+.contact_form textarea {
     line-height: 150%;
     height: 150px;
     resize: none;
@@ -528,7 +544,7 @@ textarea {
 }
 
 @media screen and (max-width: 480px) {
-    h1 {
+    .contact_form h1 {
         font-size: 26px;
     }
 
@@ -542,7 +558,7 @@ textarea {
 }
 
 @media screen and (max-width: 420px) {
-    h1 {
+    .contact_form h1 {
         font-size: 18px;
     }
 
@@ -555,7 +571,7 @@ textarea {
         width: 53px;
     }
 
-    input[type='text'], [type='email'], select, textarea {
+    .contact_form input[type='text'], [type='email'], .contact_form select, .contact_form textarea {
         font-size: 0.875em;
     }
 }
@@ -571,4 +587,152 @@ textarea {
     padding-bottom: 25px;
     font-size: x-large;
     font-weight: 700;
+}
+
+/*------------------------------------------------------------------ CreateChapter ------------------------------------------------------------------*/
+
+#tinymce {
+    width : 100%;
+}
+
+/*################################################### COMMENTAIRES SIGNALES #############################################################*/
+
+.reportedcomments {
+    display : flex ;
+    flex-direction: column ;
+    align-items: center ;
+}
+
+.reportedcomments > a {
+    display:inline-block;
+    padding:0.35em 1.2em;
+    border:0.1em solid black ;
+    margin:0 0.3em 0.3em 0;
+    border-radius:0.12em;
+    box-sizing: border-box;
+    text-decoration:none;
+    font-family:'Montserrat',sans-serif;
+    font-weight:300;
+    color: black ;
+    text-align:center;
+    transition: all 0.2s;
+}
+
+.reportedcomments > a:hover {
+    color: black  ;
+    background-color: rgba(0,0,0,0.25);
+}
+
+.unreportcomment, .moderatecomment {
+    display:inline-block;
+    padding:0.35em 1.2em;
+    border:0.5px solid black ;
+    border-radius:0.12em;
+    box-sizing: border-box;
+    text-decoration:none;
+    font-family:'Montserrat',sans-serif;
+    font-weight:300;
+    color: black ;
+    text-align:center;
+    transition: all 0.2s;
+    margin : 0 5px 5px 5px ;
+}
+
+.unreportcomment:hover {
+    background-color: rgba(0,100,0,0.25);
+}
+
+.moderatecomment:hover {
+    background-color: rgba(200,0,0,0.25);
+}
+
+/* admin chapter */
+
+#thechapters {
+    display : flex ;
+    justify-content: center ;
+    flex-flow : column ;
+}
+
+#chap-title {
+    font-size : 3rem ;
+    color : #474544;
+    font-weight: 900;
+    margin : 2% 0 3% 0 ;
+}
+
+#chap-create {
+    margin : 2% 45% 2% 45% ;
+    display:inline-block;
+    padding:0.35em 1.2em;
+    border:0.1em solid black ;
+    border-radius:0.12em;
+    box-sizing: border-box;
+    text-decoration:none;
+    font-family:'Montserrat',sans-serif;
+    font-weight:300;
+    color: black ;
+    text-align:center;
+    transition: all 0.2s;
+}
+
+#chap-create:hover {
+    color: black  ;
+    background-color: rgba(0,0,0,0.25);
+}
+
+#thechapters table {
+    line-height: 2rem;
+    margin : 4% 5% 2% 5% ;
+    border : 0.25px solid black ;
+}
+
+.edit {
+    padding:0.35em 1.2em;
+    border:0.5px solid black ;
+    border-radius:0.12em;
+    box-sizing: border-box;
+    text-decoration:none;
+    font-family:'Montserrat',sans-serif;
+    font-weight:300;
+    color: black ;
+    text-align:center;
+    transition: all 0.2s;
+}
+
+.edit:hover {
+    background-color: rgba(162, 196, 201,0.50);
+}
+
+.delete {
+    padding:0.35em 1.2em;
+    border:0.5px solid black ;
+    border-radius:0.12em;
+    box-sizing: border-box;
+    text-decoration:none;
+    font-family:'Montserrat',sans-serif;
+    font-weight:300;
+    color: black ;
+    text-align:center;
+    transition: all 0.2s;
+}
+
+.delete:hover {
+    background-color: rgba(200,0,0,0.25);
+}
+
+#thechapters table td {
+    width : 20% ;
+    text-align : center ;
+    /*border : 1px solid black ;*/
+}
+
+#thechapters tr:nth-child(even) {
+    background-color : lightgrey;
+}
+
+#thechapters table thead {
+    background-color : #B6D7A8;
+    text-align : center ;
+    font-weight : 700 ;
 }

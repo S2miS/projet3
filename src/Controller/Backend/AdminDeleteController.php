@@ -8,8 +8,16 @@
 
 namespace App\Controller\Backend;
 
+use App\Model\ChapterManager;
 
 class AdminDeleteController
 {
 
+    public function delete(int $id)
+    {
+        $adminDelete = new ChapterManager();
+        $result = $adminDelete->deleteChapter($id);
+
+        header('Location: admin-chapitres');
+    }
 }

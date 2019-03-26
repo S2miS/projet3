@@ -1,7 +1,7 @@
 <?php
 ob_start();
 ?>
-<div id="container">
+<div class="contact_form" id="container">
     <h1>&bull; Formulaire de contact &bull;</h1>
     <div class="underline">
     </div>

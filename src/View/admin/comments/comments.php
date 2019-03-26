@@ -1,7 +1,7 @@
 <?php
 ob_start();
 ?>
-    <section>
+    <section class="reportedcomments">
         <h1>Commentaires signalés</h1>
         <a href="admin-commentaires-moderation">Vers les commentaires modérés</a>
         <div id="thecomments">
@@ -12,8 +12,8 @@ ob_start();
                 <p id="commtitle"><?= htmlspecialchars($data->getPseudo()) ?>
                     <span>Publié le : <?= htmlspecialchars($data->getDate()) ?></span></p>
                     <p id="commmessage"><?= htmlspecialchars($data->getMessage()) ?></p>
-                <a href="admin-commentaires-moderation&id=<?= $data->getId() ?>">Modérer</a>
-                <a href="admin-commentaires-enlever-signalement&id=<?= $data->getId() ?>">Enlever le signalement</a>
+                <a class="moderatecomment" href="admin-commentaires-moderation&id=<?= $data->getId() ?>">Modérer</a>
+                <a class="unreportcomment" href="admin-commentaires-enlever-signalement&id=<?= $data->getId() ?>">Enlever le signalement</a>
             </div>
 
                     <?php

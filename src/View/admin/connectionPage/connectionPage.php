@@ -10,7 +10,7 @@ ob_start();
         <label for="mdp">Mot de passe</label>
         <input type="password" name="mdp" id="mdp" />
 
-        <input type="submit" value="Submit">
+        <input type="submit" value="Valider">
     </fieldset>
 </form>
 

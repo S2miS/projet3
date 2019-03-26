@@ -15,8 +15,21 @@ class ChapterManager extends dbManager
   /**Frontend**/
 
     public function getAllChapters()
+{
+    $request = $this->db->query('SELECT id, title, number, text, DATE_FORMAT(creation_date,\'%d/%m/%y\') AS creationDate FROM chapter ORDER BY creation_date DESC');
+    $results = $request->fetchAll(PDO::FETCH_ASSOC);
+    $chapters = [];
+    foreach($results as $data)
     {
-        $request = $this->db->query('SELECT id, title, number, text, DATE_FORMAT(creation_date,\'%d/%m/%y\') AS creationDate FROM chapter ORDER BY creation_date DESC');
+        $objArticle = new Chapter($data);
+        $chapters[] = $objArticle;
+    }
+    return $chapters;
+}
+
+    public function getLastChapters()
+    {
+        $request = $this->db->query('SELECT id, title, number, text, DATE_FORMAT(creation_date,\'%d/%m/%y\') AS creationDate FROM chapter ORDER BY creation_date DESC LIMIT 3');
         $results = $request->fetchAll(PDO::FETCH_ASSOC);
         $chapters = [];
         foreach($results as $data)

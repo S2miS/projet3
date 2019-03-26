@@ -8,7 +8,7 @@ class HomeController
   public function home()
   {
       $allChapters = new ChapterManager();
-      $results = $allChapters->getAllChapters();
+      $results = $allChapters->getLastChapters();
       require('src/View/home/home.php');
   }
 }

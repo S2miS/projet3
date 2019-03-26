@@ -24,7 +24,7 @@ ob_start();
             foreach ($result->getComments() as $data):
             ?>
             <div id="commcontent">
-                <p id="commtitle"><?= htmlspecialchars($data->getPseudo()) ?>
+                <p id="commtitle"><span><?= htmlspecialchars($data->getPseudo()) ?></span>
                     <span>Publié le : <?= htmlspecialchars($data->getDate()) ?></span></p>
                 <?php if ($data->getModerate()== true) : ?>
                     <p>Ce commentaire a été modéré</p>
@@ -35,8 +35,8 @@ ob_start();
                     <?php endif ; ?>
                     <?php endif ; ?>
             </div>
+            <?php endforeach ; ?>
         </div>
-        <?php endforeach ; ?>
 
         <h1>Ajouter un commentaire</h1>
         <form action="chapitre-creer-commentaire&chapterid=<?= $result->getId() ?>" method="post">

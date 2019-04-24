@@ -30,7 +30,7 @@ class AdminCreateController
         }
         else {
             $result = $addChapter->addChapter($chapter);
-            header('Location: creer-chapitre');
+            header('Location: admin-chapitres');
         }
 
     }

@@ -88,7 +88,6 @@ class ChapterManager extends dbManager
             'number'=>$chapter->getNumber(),
             'text'=>$chapter->getText()
         ]);
-        //var_dump($edit); die;
         return $edit;
     }
 

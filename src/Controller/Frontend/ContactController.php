@@ -9,10 +9,19 @@
 namespace App\Controller\Frontend;
 
 
+use App\Service\Mail;
+
 class ContactController
 {
     public function contact()
     {
         require('src/View/contact/contact.php');
+    }
+
+    public function sendContactMail()
+    {
+        $mail = new Mail();
+        $mail->sendMail();
+        header('Location: contact');
     }
 }

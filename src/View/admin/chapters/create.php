@@ -29,7 +29,7 @@ ob_start();
             <label for="textarea">Contenu :</label>
             <textarea id="textarea" name="textarea"><?= $save->getText(); ?></textarea>
         </div>
-        <button class="bouton" type="submit">
+        <button id="chapterbutton" class="bouton" type="submit">
             Envoyer
         </button>
     </form>

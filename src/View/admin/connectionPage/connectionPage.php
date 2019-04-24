@@ -1,8 +1,9 @@
 <?php
 ob_start();
 ?>
-<form method="post" action="admin-auth">
 
+<form method="post" action="admin-auth">
+    <div id="adminconnection">
     <fieldset>
         <label for="pseudo">Identifiant</label>
         <input type="text" name="pseudo" id="pseudo" />
@@ -12,6 +13,7 @@ ob_start();
 
         <input type="submit" value="Valider">
     </fieldset>
+    </div>
 </form>
 
 

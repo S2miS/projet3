@@ -31,7 +31,7 @@ ob_start();
                     <?php else : ?>
                     <p id="commmessage"><?= htmlspecialchars($data->getMessage()) ?></p>
                     <?php if($data->getReported()== false) : ?>
-                    <a href="report&comm_id=<?= $data->getId() ?>&id=<?= $result->getId() ?>">Report</a>
+                    <a href="report&comm_id=<?= $data->getId() ?>&id=<?= $result->getId() ?>">Signaler</a>
                     <?php endif ; ?>
                     <?php endif ; ?>
             </div>
@@ -40,11 +40,11 @@ ob_start();
 
         <h1>Ajouter un commentaire</h1>
         <form action="chapitre-creer-commentaire&chapterid=<?= $result->getId() ?>" method="post">
-            <div>
+            <div id="user_name">
                 <label for="user_name">Nom :</label>
                 <input type="text" id="user_name" name="user_name">
             </div>
-            <div>
+            <div id="user_message">
                 <label for="user_message">Message :</label>
                 <textarea id="user_message" name="user_message"></textarea>
             </div>

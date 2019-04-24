@@ -26,16 +26,14 @@ foreach($results as $data)
     ?>
     <div class="inline-chapters">
 
-         <p>
-            <a href='accueil-chapitre<?=$data->getId();?>'>
-            <p> CHAPITRE N°
+            <a href='chapitre&id=<?=$data->getId();?>'>
+            CHAPITRE N°
             <?= $data->getNumber() ; ?>
             :
             <?= $data->getTitle() ; ?>
             </a>
             Résumé :
             <?= substr($data->getText(),0,500). "..." ; ?>
-            </p></p>
     </div>
 <?php
 }

@@ -10,6 +10,7 @@ use App\Controller\Frontend\AboutController;
 use App\Controller\Frontend\ContactController;
 use App\Controller\Frontend\LegalController;
 use App\Controller\Frontend\ErrorController;
+use App\Controller\Frontend\ChangePasswordController;
 use App\Controller\Backend\AdminHomeController;
 use App\Controller\Backend\AdminCreateController;
 use App\Controller\Backend\AdminEditController;
@@ -263,6 +264,16 @@ switch($url) {
     case "logout" :
         $adminauth = new AdminConnectionController();
         $adminauth->logout();
+        break ;
+
+    case "changement-mdp/email" :
+        $getEmail = new ChangePasswordController();
+        $getEmail->changeMailForm();
+        break ;
+
+    case "changement-mdp/email/check-email" :
+        $checkEmail = new ChangePasswordController();
+        $checkEmail->changePasswordCheck($_POST{'check-email'});
         break ;
 
     default :

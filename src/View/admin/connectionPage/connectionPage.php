@@ -15,6 +15,7 @@ ob_start();
     </fieldset>
     </div>
 </form>
+<a href="changement-mdp/email">Mot de passe oublié ?</a>
 
 
 <?php

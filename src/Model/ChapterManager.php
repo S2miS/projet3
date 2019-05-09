@@ -13,7 +13,7 @@ class ChapterManager extends dbManager
         $this->db=self::dbConnect();
     }
   /**Frontend**/
-
+  /** Get all the chapters **/
     public function getAllChapters()
 {
     $request = $this->db->query('SELECT id, title, number, text, DATE_FORMAT(creation_date,\'%d/%m/%y\') AS creationDate FROM chapter ORDER BY creation_date DESC');
@@ -27,6 +27,7 @@ class ChapterManager extends dbManager
     return $chapters;
 }
 
+    /** Get the 3 last chapters **/
     public function getLastChapters()
     {
         $request = $this->db->query('SELECT id, title, number, text, DATE_FORMAT(creation_date,\'%d/%m/%y\') AS creationDate FROM chapter ORDER BY creation_date DESC LIMIT 3');
@@ -40,6 +41,7 @@ class ChapterManager extends dbManager
         return $chapters;
     }
 
+    /** Get a chapter with his comments */
     public function getOneChapterWithComments(Chapter $chapter)
     {
             $req = $this->db->prepare('SELECT ch.id, co.id AS com_id, co.pseudo, co.message AS com_content, co.moderate, co.reported, DATE_FORMAT(co.date, \'%d/%m/%Y à %Hh%i\') AS dateCreate, ch.title, ch.number, ch.text, DATE_FORMAT(ch.creation_date, \'%d/%m/%Y\') AS creationDate FROM chapter ch LEFT JOIN comments co ON co.id_chapter = ch.id WHERE ch.id= ?');
@@ -66,8 +68,8 @@ class ChapterManager extends dbManager
             return $chapter;
     }
     
- /**Backend**/
-
+    /**Backend**/
+    /** Adding a chapter **/
     public function addChapter(Chapter $chapter)
     {
         $request = $this->db->prepare('INSERT INTO  chapter (title, number, text) VALUES (:title, :number, :text)');
@@ -78,7 +80,7 @@ class ChapterManager extends dbManager
         ]);
         return $add ;
     }
-
+    /** Edit a chapter **/
     public function editChapter(Chapter $chapter)
     {
         $request = $this->db->prepare('UPDATE chapter SET title =:title, number =:number, text =:text WHERE id=:id');
@@ -91,6 +93,7 @@ class ChapterManager extends dbManager
         return $edit;
     }
 
+    /** Delete a chapter **/
     public function deleteChapter(int $id)
     {
         $request = $this->db->prepare('DELETE FROM chapter WHERE id=?');
@@ -98,6 +101,7 @@ class ChapterManager extends dbManager
         return $delete;
     }
 
+    /** Get a chapter without comments **/
     public function getOneChapter(int $id)
     {
         $chapter = new Chapter ;
@@ -112,6 +116,7 @@ class ChapterManager extends dbManager
         return $chapter;
     }
 
+    /** ??? **/
     public function uniqueNumber($number)
     {
         $req = $this->db->prepare('SELECT ch.number FROM chapter ch WHERE ch.number= ?');

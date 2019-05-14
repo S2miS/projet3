@@ -3,6 +3,21 @@
 font-family: 'Montserrat', sans-serif;
 }
 
+/*------------------------------------------------------------------ Responsive ------------------------------------------------------------------*/
+/* For mobile phones: */
+@media only screen and (max-width: 600px) {
+    #menu{
+        font-size: medium;
+        display : flex ;
+        justify-content: space-around;
+    }
+
+    #homepage{
+        display : flex ;
+        flex-direction: column;
+    }
+}
+
 /*------------------------------------------------------------------ General ------------------------------------------------------------------*/
 
 h1 {

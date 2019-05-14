@@ -24,8 +24,14 @@ ob_start();
             foreach ($result->getComments() as $data):
             ?>
             <div id="commcontent">
-                <p id="commtitle"><span><?= htmlspecialchars($data->getPseudo()) ?></span>
+                <?php if ($data->getModerate()!= true) : ?>
+                <p id="commtitle"><span>
+                        <?= htmlspecialchars($data->getPseudo()) ?></span>
                     <span>Publié le : <?= htmlspecialchars($data->getDate()) ?></span></p>
+                    <?php else : ?>
+                    <p id="commtitle"><span>Pseudo supprimé</span>
+                    <span>Publié le : <?= htmlspecialchars($data->getDate()) ?></span></p>
+                <?php endif ; ?>
                 <?php if ($data->getModerate()== true) : ?>
                     <p>Ce commentaire a été modéré</p>
                     <?php else : ?>

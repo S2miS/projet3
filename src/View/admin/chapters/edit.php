@@ -1,7 +1,5 @@
 <?php
 ob_start();
-
-include('src/Controller/Backend/bdConnect.php') ;
  ?>
 <div id="tinyedit">
 <script>

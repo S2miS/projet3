@@ -20,12 +20,14 @@ You can manage everything via an administration interface secured by login.
 - PHP 7.2+
 - MySQL Database
 - Apache Server
+- Composer
 
 <h2>How to install ? :</h2>
 
 First download the site on GitHub here : https://github.com/S2miS/projet3.git<br>
 Then install the site on your server<br>
-Don't forget to install Composer (https://github.com/composer/composer) and PHPMailer (https://github.com/PHPMailer/PHPMailer)<br>
+Don't forget to install Composer (https://github.com/composer/composer), PHPMailer (https://github.com/PHPMailer/PHPMailer) and TinyMCE (LIEN GITHUB)<br>
+Command : `composer install`<br>
 For the Database, use the code below :
 
 <---- Chapter table ---->
@@ -70,4 +72,8 @@ CREATE TABLE IF NOT EXISTS `identification` (
 ) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
 
 
-
+Admin_password need to be hash with the php function : `password_hash(string password, PASSWORD_BCRYPT)`<br>
+For database connection, go in the Model folder, rename dbManagerSample.php into dbManager.php and rename dbname, 
+username and password :<br>
+            `$db = new PDO('mysql:host=localhost;dbname=dbname;charset=utf8', 'username', 'password', array
+            (PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));`

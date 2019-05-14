@@ -276,6 +276,16 @@ switch($url) {
         $checkEmail->changePasswordCheck($_POST{'check-email'});
         break ;
 
+    case "changement-mdp/nouveau-mdp" :
+        $checkEmail = new ChangePasswordController();
+        $checkEmail->changePasswordForm($_GET{'token'});
+        break ;
+
+    case "changement-mdp/nouveau-mdp/check" :
+        $checkEmail = new ChangePasswordController();
+        $checkEmail->updatePassword($_POST{'password-1'}, $_POST{'password-2'}, $_GET{'token'});
+        break ;
+
     default :
     $error = new ErrorController();
     $error->error404();

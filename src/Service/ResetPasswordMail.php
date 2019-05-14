@@ -29,13 +29,13 @@ class ResetPasswordMail{
 // Expéditeur
         $mail->setFrom('thegeekization@gmail.com', 'Jean Forteroche');
 // Destinataire
-        $mail->addAddress('simbox94@yahoo.fr');
+        $mail->addAddress($email);
         $mail->isHTML(true);
 // Objet
         $mail->Subject = 'Message de la part de '.$_POST['name'];
 
 // Votre message
-        $mail->Body='Mail : '.$_POST['email'].' Titre : '.$_POST['title'].' Message : '.$_POST['message'];
+        $mail->Body='<a href="http://localhost/Projet3/changement-mdp/nouveau-mdp&token='.$token.'">Changement de mot de passe</a>';
         $mail->send();
 // Envoi du mail avec gestion des erreurs
         /* if(!$mail->Send()) {

@@ -16,7 +16,7 @@ class ChangePasswordController
 {
     public function changeMailForm ()
     {
-        require "src/View/admin/connectionPage/changePassword.php";
+        require ('src/View/admin/connectionPage/changePasswordMailForm.php');
     }
 
     public function changePasswordCheck ($email)
@@ -27,12 +27,32 @@ class ChangePasswordController
             $token = uniqid('token',true);
             $resetMail = new ResetPasswordMail();
             $resetMail->resetPasswordMail($email, $token);
-            $connectionManager->updateUser($token);
+            $connectionManager->updateUser($email, $token);
             header("Location: page-connection-admin");
         }
         else {
             header("Location: page-connection-admin");
         }
+    }
+
+    public function changePasswordForm ($token)
+    {
+        $connectionManager = new ConnectionManager();
+        $user = $connectionManager->checkUser($token);
+        if($user){
+            require "src/View/admin/connectionPage/newPassword.php";
+        }
+        else {
+            require "src/View/errors/error403.php";
+        }
+    }
+
+    public function updatePassword ($password, $token)
+    {
+        $newPassword = password_hash($password, PASSWORD_BCRYPT);
+        $connectionManager = new ConnectionManager();
+        $connectionManager->updateNewPassword($token, $newPassword);
+        header("Location: page-connection-admin");
     }
 
 }

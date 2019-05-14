@@ -44,9 +44,24 @@ class ConnectionManager extends dbManager
     public function updateUser($email, $token)
     {
         $request = $this->db->prepare('UPDATE identification SET token =: token, token_date = NOW() WHERE email = ?');
-        $request ->execute([$token, $email]);
-        $result = $request->fetch(PDO::FETCH_ASSOC);
+        $result = $request ->execute([$token, $email]);
         return $result;
+    }
+    /**Check if user with token exist**/
+    public function checkUser($token)
+    {
+        $request = $this->db->prepare('SELECT * FROM identification WHERE token = ?');
+        $request ->execute([$token]);
+        $result = $request->fetch(PDO::FETCH_ASSOC);
+        $user = new Connection();
+        $user->setToken($result{'token'});
+        return $user;
+    }
 
+    public function updateNewPassword ($token, $password)
+    {
+        $request = $this->db->prepare('UPDATE identification SET token = NULL, token_date = NULL, password =:password WHERE token = ?');
+        $result = $request ->execute([$password, $token]);
+        return $result;
     }
 }

@@ -14,12 +14,13 @@ class AdminConnectionController
 {
     public function connectionadmin()
     {
+        //var_dump(password_hash('admin', PASSWORD_BCRYPT));
         require('src/View/admin/connectionPage/connectionPage.php');
     }
 
     public function authentification(string $pseudo, string $mdp)
     {
-        $password = password_hash($mdp, PASSWORD_BCRYPT);
+        //$password = password_hash($mdp, PASSWORD_BCRYPT);
         $data = new Connection();
         $data->setPseudo($pseudo);
         $data->setAdminPassword($mdp);
@@ -28,7 +29,7 @@ class AdminConnectionController
         if ($connection{'pseudo'} === $pseudo){
             if(password_verify($mdp, $connection{'admin_password'})){
                 $_SESSION {'pseudo'} = $pseudo;
-                header('Location:accueil-administrateur');
+                header('Location:admin-commentaires');
             }
             else{
                 echo "mot de passe incorrecte";

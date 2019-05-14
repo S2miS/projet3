@@ -2,7 +2,7 @@
 ob_start();
 
 ?>
-
+<div id="chaptershome">
         <h1 id="chap-title">Chapitres</h1>
         <a id = "chap-create" href="creer-chapitre"> CREER CHAPITRE </a>
         <div id="thechapters">
@@ -29,7 +29,7 @@ ob_start();
         <?php endforeach ;?>
             </table>
         </div>
-
+</div>
 <?php
 
 $content = ob_get_clean();

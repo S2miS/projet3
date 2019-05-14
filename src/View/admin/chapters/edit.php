@@ -1,8 +1,7 @@
 <?php
 ob_start();
-
-include('src/Controller/Backend/bdConnect.php') ;
  ?>
+<div id="tinyedit">
 <script>
     tinymce.init({
         selector: 'textarea#textarea',
@@ -10,7 +9,7 @@ include('src/Controller/Backend/bdConnect.php') ;
         height: 500
     });
 </script>
-
+<h1>Modifier un chapitre</h1>
 <form action="modifier-chapitre&id=<?= $_GET['id'] ; ?>" method="post">
     <div>
         <label for="title">Titre :</label>
@@ -28,7 +27,7 @@ include('src/Controller/Backend/bdConnect.php') ;
         Envoyer
     </button>
 </form>
-
+</div>
 <?php
 
 $content = ob_get_clean();

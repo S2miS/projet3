@@ -24,14 +24,20 @@ ob_start();
             foreach ($result->getComments() as $data):
             ?>
             <div id="commcontent">
-                <p id="commtitle"><span><?= htmlspecialchars($data->getPseudo()) ?></span>
+                <?php if ($data->getModerate()!= true) : ?>
+                <p id="commtitle"><span>
+                        <?= htmlspecialchars($data->getPseudo()) ?></span>
                     <span>Publié le : <?= htmlspecialchars($data->getDate()) ?></span></p>
+                    <?php else : ?>
+                    <p id="commtitle"><span>Pseudo supprimé</span>
+                    <span>Publié le : <?= htmlspecialchars($data->getDate()) ?></span></p>
+                <?php endif ; ?>
                 <?php if ($data->getModerate()== true) : ?>
                     <p>Ce commentaire a été modéré</p>
                     <?php else : ?>
                     <p id="commmessage"><?= htmlspecialchars($data->getMessage()) ?></p>
                     <?php if($data->getReported()== false) : ?>
-                    <a href="report&comm_id=<?= $data->getId() ?>&id=<?= $result->getId() ?>">Report</a>
+                    <a href="report&comm_id=<?= $data->getId() ?>&id=<?= $result->getId() ?>">Signaler</a>
                     <?php endif ; ?>
                     <?php endif ; ?>
             </div>
@@ -40,11 +46,11 @@ ob_start();
 
         <h1>Ajouter un commentaire</h1>
         <form action="chapitre-creer-commentaire&chapterid=<?= $result->getId() ?>" method="post">
-            <div>
+            <div id="user_name">
                 <label for="user_name">Nom :</label>
                 <input type="text" id="user_name" name="user_name">
             </div>
-            <div>
+            <div id="user_message">
                 <label for="user_message">Message :</label>
                 <textarea id="user_message" name="user_message"></textarea>
             </div>

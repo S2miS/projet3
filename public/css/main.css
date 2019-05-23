@@ -146,7 +146,7 @@ font-family: 'Montserrat', sans-serif;
     #homepage {
         font-family: 'Montserrat', sans-serif;
         font-size: x-large;
-        background-image: url("../../../Projet3/images/ecriture.png");
+        background-image: url("https://lpmiaw.univ-lr.fr/perso/mfruchar/P3Simon/images/ecriture.png");
         background-repeat: no-repeat;
         background-position: right;
         background-size: contain;
@@ -196,7 +196,7 @@ font-family: 'Montserrat', sans-serif;
     /*------------------------------------------------------------------ AllChapters ------------------------------------------------------------------*/
     #allchapters {
         font-family: 'Montserrat', sans-serif;
-        background-image: url("../../../Projet3/images/livres.png");
+        background-image: url("https://lpmiaw.univ-lr.fr/perso/mfruchar/P3Simon/images/livres.png");
         background-repeat: no-repeat;
         background-position: center center;
         background-size: cover;

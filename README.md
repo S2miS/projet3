@@ -26,7 +26,7 @@ You can manage everything via an administration interface secured by login.
 
 First download the site on GitHub here : https://github.com/S2miS/projet3.git<br>
 Then install the site on your server<br>
-Don't forget to install Composer (https://github.com/composer/composer), PHPMailer (https://github.com/PHPMailer/PHPMailer) and TinyMCE (LIEN GITHUB)<br>
+Don't forget to install Composer (https://github.com/composer/composer), PHPMailer (https://github.com/PHPMailer/PHPMailer) and TinyMCE (https://github.com/tinymce/tinymce)<br>
 Command : `composer install`<br>
 For the Database, use the code below :
 

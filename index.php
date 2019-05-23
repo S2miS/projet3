@@ -15,7 +15,7 @@ use App\Controller\Backend\AdminHomeController;
 use App\Controller\Backend\AdminCreateController;
 use App\Controller\Backend\AdminEditController;
 use App\Controller\Backend\AdminDeleteController ;
-use App\Controller\Backend\AdminchapterController;
+use App\Controller\Backend\AdminChapterController;
 use App\Controller\Backend\AdminCommentsController;
 use App\Controller\Backend\AdminConnectionController;
 use App\Model\Chapter;

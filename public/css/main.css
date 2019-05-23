@@ -495,7 +495,7 @@ font-family: 'Montserrat', sans-serif;
         width: 45%;
     }
 
-    .contact_form input[type='text'], [type='email'], .contact_form select, .contact_form textarea {
+    .contact_form input[type='text'], .contact_form [type='email'], .contact_form select, .contact_form textarea {
         background: none;
         border: none;
         border-bottom: solid 2px #474544;
@@ -682,10 +682,20 @@ font-family: 'Montserrat', sans-serif;
     }
 
     #resetPassword {
-        background-color: rgb(232, 240, 254);
-        border-bottom-color: rgb(238, 238, 238);
-        border-bottom-style: inset;
+        min-height: 70vh;
+        font-family: 'Montserrat', sans-serif;
+    }
+    #resetPassword button, #resetPassword label, #resetPassword input {
+        display: flex;
+        flex-direction: column;
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 10px;
+        text-align: center;
+    }
 
+    #resetPassword label {
+        margin-top: 2%;
     }
 
     /*------------------------------------------------------------------ CreateChapter ------------------------------------------------------------------*/

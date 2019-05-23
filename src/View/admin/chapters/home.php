@@ -22,8 +22,11 @@ ob_start();
                 <td> <?= $data->getTitle() ?></td>
                 <td> <?= $data->getNumber() ?></td>
                 <td> <?= $data->getCreationDate() ?></td>
-                <td class="edit"> <a href="edit-chapitre&id=<?= $data->getId() ?>"> Editer </a> </td>
-                <td class="delete"> <a href="supprimer-chapitre&id=<?= $data->getId() ?>" onclick="return confirm('Voulez-vous supprimer ?')" title="supprimer"> Supprimer </a></td>
+                <td class="edit"> <a href="edit-chapitre&id=<?= $data->getId() ?>"><i class="desktop"> Editer </i><i class="mobile fas fa-pen"></i></a>
+                </td>
+                <td class="delete"> <a href="supprimer-chapitre&id=<?= $data->getId() ?>" onclick="return confirm
+                ('Voulez-vous supprimer ?')" title="supprimer"> <i class="desktop">Supprimer </i><i class="fas
+                fa-times-circle mobile"></i></a></td>
             </tr>
 
         <?php endforeach ;?>

@@ -40,14 +40,16 @@ class ConnectionManager extends dbManager
         }
 
     }
+
     /** Update User Password **/
     public function updateUser($email, $token)
     {
-        $request = $this->db->prepare('UPDATE identification SET token =: token, token_date = NOW() WHERE email = ?');
+        $request = $this->db->prepare('UPDATE identification SET token = ?, token_date = NOW() WHERE email = ?');
         $result = $request ->execute([$token, $email]);
         return $result;
     }
-    /**Check if user with token exist**/
+
+    /** Check if user with token exist **/
     public function checkUser($token)
     {
         $request = $this->db->prepare('SELECT * FROM identification WHERE token = ?');
@@ -55,12 +57,19 @@ class ConnectionManager extends dbManager
         $result = $request->fetch(PDO::FETCH_ASSOC);
         $user = new Connection();
         $user->setToken($result{'token'});
-        return $user;
-    }
+        $user->setTokenDate($result['token_date']);
+        if($user->getToken() != null)
+        {
+            return $user;
+        }else{
+            return false;
+        }
 
-    public function updateNewPassword ($token, $password)
+    }
+    /** Add the new password in the DB **/
+    public function updateNewPassword($token, $password)
     {
-        $request = $this->db->prepare('UPDATE identification SET token = NULL, token_date = NULL, password =:password WHERE token = ?');
+        $request = $this->db->prepare('UPDATE identification SET token = null, token_date = null, admin_password = ? WHERE token = ?');
         $result = $request ->execute([$password, $token]);
         return $result;
     }

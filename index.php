@@ -142,7 +142,7 @@ switch($url) {
     case "modifier-chapitre" :
         if(isset($_SESSION['pseudo'])) {
             $edit = new AdminEditController();
-            if (!isset($_POST['title']) OR empty($_POST['user_name'])) {
+            if (!isset($_POST['title']) OR empty($_POST['title'])) {
                 $errors[] = 'Titre';
             }
             if (!isset($_POST['number']) OR empty($_POST['number']) AND !ctype_digit($_POST['number'])) {
@@ -266,24 +266,29 @@ switch($url) {
         $adminauth->logout();
         break ;
 
-    case "changement-mdp/email" :
+    case "changement-mdp-email" :
         $getEmail = new ChangePasswordController();
         $getEmail->changeMailForm();
         break ;
 
-    case "changement-mdp/email/check-email" :
+    case "changement-mdp-email-check-email" :
         $checkEmail = new ChangePasswordController();
-        $checkEmail->changePasswordCheck($_POST{'check-email'});
+        $checkEmail->changePasswordCheck($_POST['check-email']);
+        if (isset($_POST{'check-email'}) ){
+            if (!empty($_POST{'check-email'})){
+                echo 'Veuillez entrez un email';
+            }
+        }
         break ;
 
-    case "changement-mdp/nouveau-mdp" :
+    case "changement-mdp-nouveau-mdp" :
         $checkEmail = new ChangePasswordController();
-        $checkEmail->changePasswordForm($_GET{'token'});
+        $checkEmail->changePasswordForm($_GET['token']);
         break ;
 
-    case "changement-mdp/nouveau-mdp/check" :
+    case "changement-mdp-nouveau-mdp-check" :
         $checkEmail = new ChangePasswordController();
-        $checkEmail->updatePassword($_POST{'password-1'}, $_POST{'password-2'}, $_GET{'token'});
+        $checkEmail->updatePassword($_POST['password-1'], $_POST['token']);
         break ;
 
     default :

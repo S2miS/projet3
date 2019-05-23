@@ -15,8 +15,9 @@ ob_start();
     </fieldset>
     </div>
 </form>
-<a href="changement-mdp/email">Mot de passe oublié ?</a>
-
+<div id="adminlostpassword">
+<a href="changement-mdp-email">Mot de passe oublié ?</a>
+</div>
 
 <?php
 $content = ob_get_clean();

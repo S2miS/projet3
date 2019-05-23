@@ -1,10 +1,4 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: Sim25
- * Date: 07/05/2019
- * Time: 17:36
- */
 
 namespace App\Service;
 
@@ -32,10 +26,10 @@ class ResetPasswordMail{
         $mail->addAddress($email);
         $mail->isHTML(true);
 // Objet
-        $mail->Subject = 'Message de la part de '.$_POST['name'];
+        $mail->Subject = 'Réinitialisation de votre mot de passe';
 
 // Votre message
-        $mail->Body='<a href="http://localhost/Projet3/changement-mdp/nouveau-mdp&token='.$token.'">Changement de mot de passe</a>';
+        $mail->Body='<a href="http://localhost/Projet3/changement-mdp/nouveau-mdp&token='.$token.'">Cliquez ici pour changer vôtre mot de passe</a>';
         $mail->send();
 // Envoi du mail avec gestion des erreurs
         /* if(!$mail->Send()) {

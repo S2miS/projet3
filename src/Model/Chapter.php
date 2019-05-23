@@ -88,17 +88,11 @@ class Chapter
     }
 
 
-    /**
-     * @return mixed
-     */
     public function getComments(): array
     {
         return $this->comments;
     }
 
-    /**
-     * @param mixed $comments
-     */
     public function setComments($comments)
     {
         $this->comments = $comments;

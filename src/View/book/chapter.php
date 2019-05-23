@@ -18,7 +18,7 @@ ob_start();
         </section>
     </div>
     <section>
-        <h1>Commentaires</h1>
+        <h2>Commentaires</h2>
         <div id="thecomments">
             <?php
             foreach ($result->getComments() as $data):
@@ -44,7 +44,7 @@ ob_start();
             <?php endforeach ; ?>
         </div>
 
-        <h1>Ajouter un commentaire</h1>
+        <h2>Ajouter un commentaire</h2>
         <form action="chapitre-creer-commentaire&chapterid=<?= $result->getId() ?>" method="post">
             <div id="user_name">
                 <label for="user_name">Nom :</label>

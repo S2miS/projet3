@@ -39,16 +39,25 @@ class ChangePasswordController
     {
         $connectionManager = new ConnectionManager();
         $user = $connectionManager->checkUser($token);
-        if($user){
-            require "src/View/admin/connectionPage/newPassword.php";
-        }
-        else {
+        $tokenDate = new \DateTime($user->getTokenDate());
+        $diff = $tokenDate->diff(new \DateTime())->i;
+        if($diff > 30)
+        {
+            if($user != false){
+                require "src/View/admin/connectionPage/newPassword.php";
+            }
+            else {
+                require "src/View/errors/error403.php";
+            }
+        }else{
             require "src/View/errors/error403.php";
         }
+
     }
 
     public function updatePassword ($password, $token)
     {
+
         $newPassword = password_hash($password, PASSWORD_BCRYPT);
         $connectionManager = new ConnectionManager();
         $connectionManager->updateNewPassword($token, $newPassword);

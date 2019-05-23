@@ -209,6 +209,26 @@ switch($url) {
         }
         break ;
 
+    case "admin-commentaires-modere" :
+        if (isset($_SESSION['pseudo'])) {
+            $comment = new Commentary(['id' => $_GET['id']]);
+            $adminComments = new AdminCommentsController();
+            $adminComments->adminClickModerateComments($comment);
+        } else {
+            header('Location: page-connection-admin');
+        }
+        break ;
+
+    case "admin-commentaires-nonmodere" :
+        if (isset($_SESSION['pseudo'])) {
+            $comment = new Commentary(['id' => $_GET['id']]);
+            $adminComments = new AdminCommentsController();
+            $adminComments->adminClickUnmoderateComments($comment);
+        } else {
+            header('Location: page-connection-admin');
+        }
+        break ;
+
     case "admin-commentaires-enlever-signalement" :
         if (isset($_SESSION['pseudo'])) {
             $comment = new Commentary(['id'=>$_GET['id']]);

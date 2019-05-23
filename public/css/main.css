@@ -800,8 +800,10 @@ font-family: 'Montserrat', sans-serif;
     }
 
     #chap-create {
-        margin: 1% 45% 1% 45%;
-        display: inline-block;
+        justify-content: center;
+        display: flex;
+        margin-left: 40%;
+        margin-right: 40%;
         padding: 0.35em 1.2em;
         border: 0.1em solid black;
         border-radius: 0.12em;

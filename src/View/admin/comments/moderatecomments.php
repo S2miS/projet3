@@ -12,7 +12,7 @@ ob_start();
                     <p id="commtitle"><?= htmlspecialchars($data->getPseudo()) ?>
                         <span>Publié le : <?= htmlspecialchars($data->getDate()) ?></span></p>
                     <p id="commmessage"><?= htmlspecialchars($data->getMessage()) ?></p>
-                    <a  class="moderatecomment" href="admin-commentaires-moderation&id=<?= $data->getId() ?>">Modérer</a>
+                    <a  class="moderatecomment" href="admin-commentaires-nonmodere&id=<?= $data->getId() ?>">Supprimer la modération</a>
                 </div>
 
                 <?php

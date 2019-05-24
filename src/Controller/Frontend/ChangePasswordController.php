@@ -40,10 +40,11 @@ class ChangePasswordController
         $connectionManager = new ConnectionManager();
         $user = $connectionManager->checkUser($token);
         $tokenDate = new \DateTime($user->getTokenDate());
-        $diff = $tokenDate->diff(new \DateTime())->i;
-        if($diff > 30)
+        $diff = $tokenDate->diff(new \DateTime());
+        if($diff->i < 30)
         {
             if($user != false){
+
                 require "src/View/admin/connectionPage/newPassword.php";
             }
             else {

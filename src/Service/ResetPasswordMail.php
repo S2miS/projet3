@@ -11,14 +11,11 @@ class ResetPasswordMail{
 
     public function resetPasswordMail($email, $token){
         $mail = new PHPMailer(true);
-        $mail->SMTPDebug=4;
-        $mail->IsSMTP();
-        $mail->isSendmail();
         $mail->Host = "smtp.gmail.com";
         $mail->SMTPAuth = true;
         $mail->Username = "thegeekization@gmail.com";
         $mail->Password = "dmsvjiunkgmwmppx";
-        $mail->SMTPSecure = "ssl";
+        $mail->SMTPSecure = "";
         $mail->Port = 465;
 
 // Expéditeur
@@ -30,13 +27,13 @@ class ResetPasswordMail{
         $mail->Subject = 'Reinitialisation de votre mot de passe';
 
 // Votre message
-        $mail->Body='<a href="https://lpmiaw.univ-lr.fr/perso/mfruchar/P3Simon/changement-mdp/nouveau-mdp&token='.$token.'">Cliquez ici pour changer vôtre mot de passe</a>';
+        $mail->Body='<a href="https://lpmiaw.univ-lr.fr/perso/mfruchar/P3Simon/changement-mdp-nouveau-mdp&token='.$token.'">Cliquez ici pour changer votre mot de passe</a>';
         $mail->send();
 // Envoi du mail avec gestion des erreurs
-         if(!$mail->Send()) {
+        /* if(!$mail->Send()) {
              echo 'Erreur : ' . $mail->ErrorInfo;
          } else {
              echo 'Message envoyé !';
-         }
+         }*/
     }
 }

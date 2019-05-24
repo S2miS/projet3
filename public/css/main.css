@@ -654,6 +654,27 @@ font-family: 'Montserrat', sans-serif;
         font-weight: 700;
     }
 
+    /*------------------------------------------------------------------ ResetPassword ------------------------------------------------------------------*/
+
+    #newPassword {
+        font-family: 'Montserrat', sans-serif;
+        margin-top: 2%;
+        margin-left: 40vw;
+        margin-right: 40vw;
+        text-align: center;
+        min-height: 80vh;
+    }
+
+    #newPassword form {
+        display: flex;
+        flex-direction: column;
+    }
+
+    #newPassword button {
+        margin-top: 2%;
+    }
+
+
     /*------------------------------------------------------------------ AdminConnection ------------------------------------------------------------------*/
     #adminconnection {
         font-family: 'Montserrat', sans-serif;

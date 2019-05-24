@@ -1,7 +1,7 @@
 <?php
 ob_start();
 ?>
-
+<div id="newPassword">
     <form action="changement-mdp-nouveau-mdp-check" method="post">
         <input type="hidden" value="<?= $_GET['token'] ?>" name="token" id="token">
         <label for="password-1">Votre nouveau mot de passe : </label>
@@ -10,7 +10,7 @@ ob_start();
         <input type="password" id="password-2" name="password-2">
         <button type="submit">Confirmer</button>
     </form>
-
+</div>
 
 <?php
 $content = ob_get_clean();

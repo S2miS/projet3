@@ -2,4 +2,4 @@
 vendor/
 /vendor/
 .idea/
-src/Model/dbManager.php
+src/Model/dbManagerSample.php

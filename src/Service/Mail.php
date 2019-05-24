@@ -9,13 +9,11 @@ require 'vendor/autoload.php';
 class Mail{
     public function sendMail(){
         $mail = new PHPMailer(true);
-        $mail->SMTPDebug=4;
-        $mail->IsSMTP();
         $mail->Host = "smtp.gmail.com";
         $mail->SMTPAuth = true;
         $mail->Username = "thegeekization@gmail.com";
         $mail->Password = "dmsvjiunkgmwmppx";
-        $mail->SMTPSecure = "ssl";
+        $mail->SMTPSecure = "";
         $mail->Port = 465;
 
 // Expéditeur
@@ -27,7 +25,9 @@ class Mail{
         $mail->Subject = 'Message de la part de '.$_POST['name'];
 
 // Votre message
-        $mail->Body='Mail : '.$_POST['email'];echo'<br>'.'Titre : '.$_POST['title'];echo'<br>'.'Message : '.$_POST['message'];
+        $mail->Body= '<p> Mail : '.$_POST['email'].'</p>
+                      <p>Titre : '.$_POST['title'].' </p>
+                      Message : '.$_POST['message'];
         $mail->send();
 // Envoi du mail avec gestion des erreurs
        /* if(!$mail->Send()) {

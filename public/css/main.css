@@ -2,874 +2,916 @@
 @font-face {
 font-family: 'Montserrat', sans-serif;
 }
+    /*------------------------------------------------------------------ General ------------------------------------------------------------------*/
+    h1 {
+        color: #474544;
+        font-size: 32px;
+        font-weight: 700;
+        letter-spacing: 7px;
+        text-align: center;
+        text-transform: uppercase;
+    }
 
-/*------------------------------------------------------------------ Responsive ------------------------------------------------------------------*/
-/* For mobile phones: */
-@media only screen and (max-width: 600px) {
-    #menu{
-        font-size: medium;
-        display : flex ;
+    body {
+        font-family: 'Montserrat', sans-serif;
+    }
+
+    a {
+        color: black !important;
+    }
+
+    /*------------------------------------------------------------------ Navigation ------------------------------------------------------------------*/
+    #authorname {
+        text-align: center;
+        padding: 15px;
+        font-family: 'Montserrat', sans-serif;
+        font-weight: bold;
+        font-size: xx-large;
+    }
+
+    #navigation>ul {
+        text-align: end;
+        background-color: rgb(162, 196, 201);
+        padding: 10px;
+    }
+
+    #navigation ul {
+        margin-bottom: 0 !important;
+    }
+    #menu {
+        display: flex;
+        flex-direction: row;
+        background-color: #B6D7A8;
+        justify-content: space-around;
+        padding-top: 15px;
+        padding-bottom: 15px;
+        padding-left: 25%;
+        padding-right: 25%;
+    }
+
+    #adminmenu {
+        display: flex;
+        flex-direction: row;
+        background-color: #EA9999;
+        justify-content: space-around;
+        padding-top: 15px;
+        padding-bottom: 15px;
+        padding-left: 25%;
+        padding-right: 25%;
+    }
+
+    #navigation {
+        font-family: 'Montserrat', sans-serif;
+        font-size: x-large;
+    }
+
+    #icons a {
+        padding-right: 25px;
+    }
+
+    /*------------------------------------------------------------------ Footer ------------------------------------------------------------------*/
+    #footer {
+        background-color: rgb(162, 196, 201);
+        justify-content: space-between;
+        align-items: flex-start;
+        height: 12vh;
+        font-family: 'Montserrat', sans-serif;
+        font-size: 1em;
+        padding-top: 10px;
+        padding-left: 10px;
+    }
+
+    #footer a {
+        font-family: 'Montserrat', sans-serif;
+        font-size: 1.3em;
+    }
+
+    #footer .row {
+        margin: 0 !important;
+    }
+    #firstlink {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        float: left;
+    }
+
+    #aboutcontact {
+        height: 10vh;
+        justify-content: flex-start;
+        padding-left: 5vh;
+    }
+
+    #aboutcontact a {
+        padding-bottom: 2vh;
+        padding-right: 2vh;
+    }
+
+    #social {
+        display: flex;
+        flex-direction: column;
+        width: 40%;
+        align-items: flex-end;
+        align-content: flex-start;
+        justify-content: space-around;
+        height: 10vh;
+        float: right;
+    }
+
+    #social a i {
+        padding-right: 10px;
+    }
+
+    /*------------------------------------------------------------------ Homepage ------------------------------------------------------------------*/
+    #home-title {
+        text-align: center;
+        padding-top: 25px;
+        font-size: 1.5em;
+        font-weight: bold;
+    }
+
+    #hometext1, #hometext2, #hometext3 {
+        padding-top: 50px;
+        padding-bottom: 50px;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        text-align: center;
+    }
+
+    #hometext1 p, #hometext2 p, #hometext3 p {
+        font-size: 1.2rem;
+    }
+
+    #homepage {
+        font-family: 'Montserrat', sans-serif;
+        font-size: x-large;
+        background-image: url("https://lpmiaw.univ-lr.fr/perso/mfruchar/P3Simon/images/ecriture.png");
+        background-repeat: no-repeat;
+        background-position: right;
+        background-size: contain;
+
+    }
+
+    #hometext1 a, #hometext2 a, #hometext3 a {
+
+        color: black;
+        border: 3px #EA9999 solid;
+        background-color: rgba(255,0,0,0.2);
+        text-decoration: none;
+        margin-left: 25%;
+        margin-right: 25%;
+    }
+
+    #homepage h3 {
+        text-align: center;
+        padding-top: 25px;
+        padding-bottom: 25px;
+        font-size: x-large;
+        font-weight: 700;
+    }
+
+    #homechapters {
+        font-family: 'Montserrat', sans-serif;
+        display: flex;
+        flex-direction: row;
         justify-content: space-around;
     }
 
-    #homepage{
-        display : flex ;
+    #homechapters a {
+        font-weight: bold;
+        display: flex;
+        flex-direction: row;
+        padding-bottom: 25px;
+        padding-top: 25px;
+    }
+    #homechapters>div {
+        text-align: justify;
+        border: 1px solid black;
+        margin: 10px;
+        padding: 10px;
+        background-color: rgba(51, 51, 51, 0.2);
+    }
+
+    /*------------------------------------------------------------------ AllChapters ------------------------------------------------------------------*/
+    #allchapters {
+        font-family: 'Montserrat', sans-serif;
+        background-image: url("https://lpmiaw.univ-lr.fr/perso/mfruchar/P3Simon/images/livres.png");
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-size: cover;
+        min-height: 70vh;
+    }
+
+    #allchapters h3 {
+        text-align: center;
+        font-size: x-large;
+        font-weight: bold;
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+
+    #Summary p {
+        padding-right: 25%;
+        padding-left: 25%;
+        line-height: 1.8;
+        text-align: center;
+        text-align: justify;
+    }
+
+    #chapterslist {
+        padding-right: 1px;
+        padding-left: 1px;
+        line-height: 1.8;
+        text-align: center;
+    }
+
+    #allchapters h4 {
+        text-align: center;
+        padding-top: 25px;
+        padding-bottom: 25px;
+        font-size: x-large;
+        font-weight: bold;
+    }
+
+    #chapterslist {
+        text-align: center;
+        padding: 10px;
+    }
+
+    #chapterslist a:hover {
+        font-weight: bold;
+    }
+
+    /*------------------------------------------------------------------ Chapter ------------------------------------------------------------------*/
+    #thechapter {
+        font-family: 'Montserrat', sans-serif;
+    }
+
+    section h1 {
+        padding-top: 25px;
+        padding-bottom: 25px;
+    }
+
+    #thetext {
+        line-height: 1.8;
+        padding-right: 15%;
+        padding-left: 15%;
+        text-align: justify;
+    }
+
+    #thecomments {
+        display: flex;
         flex-direction: column;
+        align-items: center;
+        padding-right: 15%;
+        padding-left: 15%;
+
     }
-}
-
-/*------------------------------------------------------------------ General ------------------------------------------------------------------*/
-
-h1 {
-    color: #474544;
-    font-size: 32px;
-    font-weight: 700;
-    letter-spacing: 7px;
-    text-align: center;
-    text-transform: uppercase;
-}
-
-body {
-    font-family: 'Montserrat', sans-serif ;
-}
-
-/*------------------------------------------------------------------ Navigation ------------------------------------------------------------------*/
-
-#authorname {
-    text-align: center;
-    padding: 15px;
-    font-family: 'Montserrat', sans-serif;
-    font-weight: bold;
-    font-size: xx-large;
-}
-
-#navigation ul:first-child {
-    text-align: end;
-    background-color: rgb(162, 196, 201);
-    padding: 10px;
-}
-
-#menu {
-    display : flex ;
-    flex-direction : row ;
-    background-color : #B6D7A8;
-    justify-content: space-around;
-    padding-top: 15px;
-    padding-bottom: 15px;
-    padding-left: 25%;
-    padding-right: 25%;
-}
-
-#adminmenu {
-    display : flex ;
-    flex-direction : row ;
-    background-color : #EA9999;
-    justify-content: space-around;
-    padding-top: 15px;
-    padding-bottom: 15px;
-    padding-left: 25%;
-    padding-right: 25%;
-}
-
-#navigation {
-    font-family: 'Montserrat', sans-serif;
-    font-size: x-large;
-}
-
-#icons a {
-    padding-right: 25px;
-}
-
-
-/*------------------------------------------------------------------ Footer ------------------------------------------------------------------*/
-
-#footer {
-    background-color: rgb(162, 196, 201);
-    justify-content: space-between;
-    align-items: flex-start;
-    height : 10vh ;
-    font-family: 'Montserrat', sans-serif;
-    font-size: x-large;
-    padding-top: 10px;
-    padding-left: 10px;
-}
-
-#footer a {
-    font-family: 'Montserrat', sans-serif;
-    font-size: x-large;
-}
-
-#firstlink {
-    display: flex;
-    flex-direction : row ;
-    justify-content: flex-start ;
-    width : 45% ;
-    float : left ;
-    height : 10vh ;
-}
-
-#aboutcontact {
-    display: flex;
-    flex-direction : column ;
-    height : 10vh ;
-    justify-content: flex-start ;
-    padding-left : 5vh ;
-}
-
-#aboutcontact a {
-    padding-bottom : 2vh ;
-}
-
-#social {
-    display: flex;
-    flex-direction: column;
-    width:40%;
-    align-items: flex-end;
-    align-content: flex-start;
-    justify-content: space-around;
-    height : 10vh ;
-    float : right ;
-}
-
-#social a {
-    padding-right: 25px;
-}
-#social a i {
-    padding-right: 10px;
-}
-
-    /*------------------------------------------------------------------ Homepage ------------------------------------------------------------------*/
-
-#home-title {
-    text-align: center;
-    padding-top: 25px;
-    font-size: x-large;
-    font-weight: bold;
-}
-#hometext1 {
-    padding-left: 30%;
-}
-
-#hometext2 {
-    padding-left:30%;
-}
-#hometext3 {
-    padding-left: 10%;
-}
-#hometext1, #hometext2, #hometext3 {
-    padding-top: 100px;
-    padding-bottom: 100px;
-}
-
-#hometext1 p, #hometext2 p, #hometext3 p {
-    font-size : 1.2rem ;
-}
-#homepage {
-    font-family: 'Montserrat', sans-serif;
-    font-size: x-large;
-    background-image:url("../../../Projet3/images/ecriture.png");
-    background-repeat:no-repeat;
-    background-position:right;
-    background-size: contain;
-
-}
-
-#hometext1 a, #hometext2 a, #hometext3 a {
-    margin-left: 100px;
-    margin-right: 100px;
-    padding: 10px;
-    color: black ;
-    border: 3px #EA9999 solid;
-    text-decoration: none;
-}
-
-#homepage h3 {
-    text-align: center;
-    padding-top: 25px;
-    padding-bottom: 25px;
-    font-size: x-large;
-    font-weight: 700;
-}
-
-#homechapters {
-    font-family: 'Montserrat', sans-serif;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-}
-#homechapters a {
-    font-weight: bold;
-    display: flex;
-    flex-direction: row;
-    padding-bottom: 25px;
-    padding-top: 25px;
-}
-
-.inline-chapters {
-    font-family: 'Montserrat', sans-serif !important;
-    width: 25vw !important;
-    text-align: justify !important;
-    border: 1px solid black !important;
-    margin: 10px !important;
-    padding: 10px !important;
-    background-color: rgba(51,51,51,0.2) !important;
-}
-
-/*------------------------------------------------------------------ AllChapters ------------------------------------------------------------------*/
-
-#allchapters {
-    font-family: 'Montserrat', sans-serif;
-    background-image:url("../../../Projet3/images/livres.png");
-    background-repeat:no-repeat;
-    background-position:center center;
-    background-size: cover;
-    min-height: 70vh;
-}
-#allchapters h3 {
-    text-align: center;
-    font-size: x-large;
-    font-weight: bold;
-    padding-top: 10px;
-    padding-bottom: 10px;
-}
-#Summary p {
-    padding-right: 25%;
-    padding-left: 25%;
-    line-height: 1.8;
-    text-align: center;
-    text-align: justify;
-}
-
-#chapterslist {
-    padding-right: 1px;
-    padding-left: 1px;
-    line-height: 1.8;
-    text-align: center;
-}
-
-#allchapters h4 {
-    text-align: center;
-    padding-top: 25px;
-    padding-bottom: 25px;
-    font-size: x-large;
-    font-weight: bold;
-}
-
-#chapterslist {
-    text-align: center;
-    padding: 10px;
-}
-#chapterslist a:hover {
-    font-weight:bold;
-}
-
-/*------------------------------------------------------------------ Chapter ------------------------------------------------------------------*/
-
-#thechapter {
-    font-family: 'Montserrat', sans-serif;
-}
-section h1 {
-    padding-top: 25px;
-    padding-bottom: 25px;
-}
-
-#thetext {
-    line-height: 1.8;
-    padding-right: 15%;
-    padding-left: 15%;
-    text-align: justify;
-}
-#thecomments {
-    display: flex;
-    flex-direction: column;
-    align-items: center ;
-    padding-right: 15%;
-    padding-left: 15%;
-
-}
-
-#thecomments a {
-    display:inline-block;
-    padding:0.35em 1.2em;
-    border:1px solid black ;
-    margin:0 0.3em 0.3em 0.3em;
-    border-radius:0.12em;
-    box-sizing: border-box;
-    text-decoration:none;
-    font-family:'Montserrat',sans-serif;
-    font-weight:300;
-    color: black ;
-    text-align:center;
-    transition: all 0.2s;
-}
-#thecomments a:hover {
-    background-color: rgba(200, 0, 0, 0.25);
-}
-#thecomments h1 {
-    padding-bottom: 25px;
-}
-
-#commtitle {
-    background-color: #bfbfbf;
-    padding: 5px ;
-    display : flex ;
-    flex-direction: row ;
-    justify-content: space-between;
-}
-
-#commmessage {
-    padding-top: 10px;
-    padding-bottom: 10px;
-    padding-left: 5px;
-}
-
-#commcontent {
-    font-family: 'Montserrat', sans-serif;
-    border: 1px solid black;
-    margin: 25px;
-    width: 80%;
-}
-
-#commcontent input {
-    margin: 5px;
-}
-
-#thechapter form {
-    border: 1px solid black;
-    margin-bottom: 25px;
-    margin-left: 25%;
-    margin-right: 25%;
-    background-color: #bfbfbf;
-}
-
-#user_name {
-    margin-top: 5px;
-    margin-bottom: 10px;
-}
-
-#user_name label {
-    margin-left: 37px;
-}
-
-#user_message {
-    height: 100px;
-    width: 80%;
-    margin-left: 5px;
-    resize:none;
-    display: flex;
-    flex-direction: row;
-}
-
-#thechapter button {
-    margin-top: 35px;
-    margin-bottom: 10px;
-    margin-left: 42%;
-    display: flex;
-    justify-content: center;
-}
-/*------------------------------------------------------------------ About ------------------------------------------------------------------*/
-
-#about {
-    font-family: 'Montserrat', sans-serif;
-    min-height: 70vh;
-}
-#about img {
-    width: 300px;
-    border: 1px black solid;
-    border-radius: 10px;
-    margin-left: 25%;
-    margin-top: 25px;
-    margin-right: 100px;
-    float:left;
-}
-
-#description {
-    display: flex;
-    justify-content: center;
-}
-
-#description figcaption {
-    margin-top: 25px;
-    margin-right: 10%;
-    padding-left: 25px;
-    line-height: 1.5em;
-    text-align: justify;
-}
-
-#about h3 {
-    text-align: center;
-    padding-top: 25px;
-    padding-bottom: 25px;
-    font-size: x-large;
-    font-weight: 700;
-}
-
-#about tr {
-    display: flex;
-    justify-content: center;
-    flex-flow: row;
-    padding-left: 20%;
-    padding-right: 20%;
-    padding-bottom: 25px;
-}
-
-#allbooks {
-    flex-flow: column;
-    display: flex;
-    padding: 0;
-    margin: 0;
-}
-
-#allbooks td {
-    line-height: 1.5em;
-}
-
-#about tr td:first-child {
-    font-weight: bold;
-    min-width: 350px;
-}
-
-#about tr td:last-child {
-    text-align: justify;
-}
-
-/*------------------------------------------------------------------ Contact ------------------------------------------------------------------*/
-
-.contact_form button {
-    overflow: visible;
-}
-
-.contact_form button, select {
-    text-transform: none;
-}
-
-.contact_form button, input, select, textarea {
-    color: #5A5A5A;
-    font: inherit;
-    margin: 0;
-}
-
-.contact_form input {
-    line-height: normal;
-}
-
-.contact_form textarea {
-    overflow: auto;
-}
 
-#container {
-    font-family: 'Montserrat', Arial, sans-serif;
-    border: solid 3px #474544;
-    max-width: 768px;
-    margin: 60px auto;
-    position: relative;
-    padding: 20px;
-}
-
-.contact_form form {
-    padding: 37.5px;
-    margin: 50px 0;
-}
-
-.contact_form h1 {
-    color: #474544;
-    font-size: 32px;
-    font-weight: 700;
-    letter-spacing: 7px;
-    text-align: center;
-    text-transform: uppercase;
-}
-
-.underline {
-    border-bottom: solid 2px #474544;
-    margin: 1em auto;
-    width: 80px;
-}
-
-.icon_wrapper {
-    margin: 50px 0;
-    width: 100%;
-}
-
-.icon {
-    display: block;
-    fill: #474544;
-    height: 50px;
-    margin: 0 auto;
-    width: 50px;
-}
-
-.email {
-    float: right;
-    width: 45%;
-}
-
-.contact_form input[type='text'], [type='email'], .contact_form select, .contact_form textarea {
-    background: none;
-    border: none;
-    border-bottom: solid 2px #474544;
-    color: #474544;
-    font-size: 1.000em;
-    font-weight: 400;
-    letter-spacing: 1px;
-    margin: 0em 0 1.875em 0;
-    padding: 0 0 0.875em 0;
-    text-transform: uppercase;
-    width: 100%;
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    -ms-box-sizing: border-box;
-    -o-box-sizing: border-box;
-    box-sizing: border-box;
-    -webkit-transition: all 0.3s;
-    -moz-transition: all 0.3s;
-    -ms-transition: all 0.3s;
-    -o-transition: all 0.3s;
-    transition: all 0.3s;
-}
-
-.contact_form input[type='text']:focus, [type='email']:focus, .contact_form textarea:focus {
-    outline: none;
-    padding: 0 0 0.875em 0;
-}
-
-.message {
-    float: none;
-}
-
-.name {
-    float: left;
-    width: 45%;
-}
-
-.contact_form select {
-    background: url('https://cdn4.iconfinder.com/data/icons/ionicons/512/icon-ios7-arrow-down-32.png') no-repeat right;
-    outline: none;
-    -moz-appearance: none;
-    -webkit-appearance: none;
-}
-
-.contact_form select::-ms-expand {
-    display: none;
-}
-
-.subject {
-    width: 100%;
-}
-
-.title {
-    width: 100%;
-}
-
-.contact_form textarea {
-    line-height: 150%;
-    height: 150px;
-    resize: none;
-    width: 100%;
-}
-
-::-webkit-input-placeholder {
-    color: #474544;
-}
-
-:-moz-placeholder {
-    color: #474544;
-    opacity: 1;
-}
-
-::-moz-placeholder {
-    color: #474544;
-    opacity: 1;
-}
-
-:-ms-input-placeholder {
-    color: #474544;
-}
-
-#form_button {
-    background: none;
-    border: solid 2px #474544;
-    color: #474544;
-    cursor: pointer;
-    display: inline-block;
-    font-family: 'Helvetica', Arial, sans-serif;
-    font-size: 0.875em;
-    font-weight: bold;
-    outline: none;
-    padding: 20px 35px;
-    text-transform: uppercase;
-    -webkit-transition: all 0.3s;
-    -moz-transition: all 0.3s;
-    -ms-transition: all 0.3s;
-    -o-transition: all 0.3s;
-    transition: all 0.3s;
-}
-
-#form_button:hover {
-    background: #474544;
-    color: #F2F3EB;
-}
+    #thecomments a {
+        display: inline-block;
+        padding: 0.35em 1.2em;
+        border: 1px solid black;
+        margin: 0 0.3em 0.3em 0.3em;
+        border-radius: 0.12em;
+        box-sizing: border-box;
+        text-decoration: none;
+        font-family: 'Montserrat', sans-serif;
+        font-weight: 300;
+        color: black;
+        text-align: center;
+        transition: all 0.2s;
+    }
+
+    #thecomments a:hover {
+        background-color: rgba(200, 0, 0, 0.25);
+    }
+
+    #thecomments h1 {
+        padding-bottom: 25px;
+    }
+
+    #commtitle {
+        background-color: #bfbfbf;
+        padding: 5px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    #commmessage {
+        padding-top: 10px;
+        padding-bottom: 10px;
+        padding-left: 5px;
+    }
+
+    #commcontent {
+        font-family: 'Montserrat', sans-serif;
+        border: 1px solid black;
+        margin: 25px;
+        width: 80%;
+    }
+
+    #commcontent input {
+        margin: 5px;
+    }
+
+    #thechapter form {
+        border: 1px solid black;
+        margin-bottom: 25px;
+        margin-left: 25%;
+        margin-right: 25%;
+        background-color: #bfbfbf;
+    }
+
+    #thechapter h2 {
+        font-family: 'Montserrat', sans-serif;
+        font-size: 1.7em;
+        text-transform: uppercase;
+        text-align: center;
+}
+
+    #user_name {
+        margin-top: 5px;
+        margin-bottom: 10px;
+    }
+
+    #user_name label {
+        margin-left: 37px;
+    }
+
+    #user_message {
+        height: 100px;
+        width: 80%;
+        margin-left: 5px;
+        resize: none;
+        display: flex;
+        flex-direction: row;
+    }
+
+    #thechapter button {
+        margin-top: 35px;
+        margin-bottom: 10px;
+        margin-left: 42%;
+        display: flex;
+        justify-content: center;
+    }
+
+    /*------------------------------------------------------------------ About ------------------------------------------------------------------*/
+    #about {
+        font-family: 'Montserrat', sans-serif;
+        min-height: 70vh;
+    }
+
+    #about img {
+        width: 300px;
+        border: 1px black solid;
+        border-radius: 10px;
+        margin-left: 25%;
+        margin-right: 2%;
+        margin-top: 25px;
+        float: left;
+    }
+
+    #description {
+        display: flex;
+        justify-content: center;
+    }
+
+    #description figcaption {
+        margin-top: 25px;
+        margin-right: 5%;
+        padding-left: 25px;
+        line-height: 1.5em;
+        text-align: justify;
+    }
+
+    #about h3 {
+        text-align: center;
+        padding-top: 25px;
+        padding-bottom: 25px;
+        font-size: x-large;
+        font-weight: 700;
+    }
+
+    #about tr {
+        display: flex;
+        justify-content: center;
+        flex-flow: row;
+        padding-left: 20%;
+        padding-right: 20%;
+        padding-bottom: 25px;
+    }
+
+    #allbooks {
+        flex-flow: column;
+        display: flex;
+        padding: 0;
+        margin: 0;
+    }
+
+    #allbooks td {
+        line-height: 1.5em;
+    }
+
+    #about tr td:first-child {
+        font-weight: bold;
+        min-width: 350px;
+    }
+
+    #about tr td:last-child {
+        text-align: justify;
+    }
+
+    /*------------------------------------------------------------------ Contact ------------------------------------------------------------------*/
+    .contact_form button {
+        overflow: visible;
+    }
+
+    .contact_form button, select {
+        text-transform: none;
+    }
+
+    .contact_form button, input, select, textarea {
+        color: #5A5A5A;
+        font: inherit;
+        margin: 0;
+    }
+
+    .contact_form input {
+        line-height: normal;
+    }
+
+    .contact_form textarea {
+        overflow: auto;
+    }
 
-@media screen and (max-width: 768px) {
     #container {
-        margin: 20px auto;
-        width: 95%;
+        font-family: 'Montserrat', Arial, sans-serif;
+        border: solid 3px #474544;
+        max-width: 768px;
+        margin: 60px auto;
+        position: relative;
+        padding: 20px;
     }
-}
 
-@media screen and (max-width: 480px) {
+    .contact_form form {
+        padding: 37.5px;
+        margin: 50px 0;
+    }
+
     .contact_form h1 {
-        font-size: 26px;
+        color: #474544;
+        font-size: 32px;
+        font-weight: 700;
+        letter-spacing: 7px;
+        text-align: center;
+        text-transform: uppercase;
     }
 
     .underline {
-        width: 68px;
+        border-bottom: solid 2px #474544;
+        margin: 1em auto;
+        width: 80px;
     }
 
-    #form_button {
-        padding: 15px 25px;
-    }
-}
-
-@media screen and (max-width: 420px) {
-    .contact_form h1 {
-        font-size: 18px;
+    .icon_wrapper {
+        margin: 50px 0;
+        width: 100%;
     }
 
     .icon {
-        height: 35px;
-        width: 35px;
+        display: block;
+        fill: #474544;
+        height: 50px;
+        margin: 0 auto;
+        width: 50px;
     }
 
-    .underline {
-        width: 53px;
+    .email {
+        float: right;
+        width: 45%;
     }
 
-    .contact_form input[type='text'], [type='email'], .contact_form select, .contact_form textarea {
+    .contact_form input[type='text'], .contact_form [type='email'], .contact_form select, .contact_form textarea {
+        background: none;
+        border: none;
+        border-bottom: solid 2px #474544;
+        color: #474544;
+        font-size: 1.000em;
+        font-weight: 400;
+        letter-spacing: 1px;
+        margin: 0em 0 1.875em 0;
+        padding: 0 0 0.875em 0;
+        text-transform: uppercase;
+        width: 100%;
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        -ms-box-sizing: border-box;
+        -o-box-sizing: border-box;
+        box-sizing: border-box;
+        -webkit-transition: all 0.3s;
+        -moz-transition: all 0.3s;
+        -ms-transition: all 0.3s;
+        -o-transition: all 0.3s;
+        transition: all 0.3s;
+    }
+
+    .contact_form input[type='text']:focus, [type='email']:focus, .contact_form textarea:focus {
+        outline: none;
+        padding: 0 0 0.875em 0;
+    }
+
+    .message {
+        float: none;
+    }
+
+    .name {
+        float: left;
+        width: 45%;
+    }
+
+    .contact_form select {
+        background: url('https://cdn4.iconfinder.com/data/icons/ionicons/512/icon-ios7-arrow-down-32.png') no-repeat right;
+        outline: none;
+        -moz-appearance: none;
+        -webkit-appearance: none;
+    }
+
+    .contact_form select::-ms-expand {
+        display: none;
+    }
+
+    .subject {
+        width: 100%;
+    }
+
+    .title {
+        width: 100%;
+    }
+
+    .contact_form textarea {
+        line-height: 150%;
+        height: 150px;
+        resize: none;
+        width: 100%;
+    }
+
+    ::-webkit-input-placeholder {
+        color: #474544;
+    }
+
+    :-moz-placeholder {
+        color: #474544;
+        opacity: 1;
+    }
+
+    ::-moz-placeholder {
+        color: #474544;
+        opacity: 1;
+    }
+
+    :-ms-input-placeholder {
+        color: #474544;
+    }
+
+    #form_button {
+        background: none;
+        border: solid 2px #474544;
+        color: #474544;
+        cursor: pointer;
+        display: inline-block;
+        font-family: 'Helvetica', Arial, sans-serif;
         font-size: 0.875em;
+        font-weight: bold;
+        outline: none;
+        padding: 20px 35px;
+        text-transform: uppercase;
+        -webkit-transition: all 0.3s;
+        -moz-transition: all 0.3s;
+        -ms-transition: all 0.3s;
+        -o-transition: all 0.3s;
+        transition: all 0.3s;
     }
-}
 
-/*------------------------------------------------------------------ LegalNotice ------------------------------------------------------------------*/
-#legalnotice {
-    font-family: 'Montserrat', sans-serif;
-    padding: 25px;
-}
-#legalnotice h3 {
-    text-align: center;
-    padding-top: 25px;
-    padding-bottom: 25px;
-    font-size: x-large;
-    font-weight: 700;
-}
+    #form_button:hover {
+        background: #474544;
+        color: #F2F3EB;
+    }
 
-/*------------------------------------------------------------------ AdminConnection ------------------------------------------------------------------*/
+    @media screen and (max-width: 768px) {
+        #container {
+            margin: 20px auto;
+            width: 95%;
+        }
+    }
 
-#adminconnection {
-    font-family: 'Montserrat', sans-serif;
-    padding: 25px;
-    text-align: center;
-    min-height: 70vh;
-}
-#adminconnection input {
-    display: flex;
-    flex-direction: column;
-    margin-left: auto;
-    margin-right: auto;
-    margin-bottom: 10px;
-}
+    @media screen and (max-width: 480px) {
+        .contact_form h1 {
+            font-size: 26px;
+        }
 
+        .underline {
+            width: 68px;
+        }
 
+        #form_button {
+            padding: 15px 25px;
+        }
+    }
 
+    @media screen and (max-width: 420px) {
+        .contact_form h1 {
+            font-size: 18px;
+        }
 
-/*------------------------------------------------------------------ CreateChapter ------------------------------------------------------------------*/
+        .icon {
+            height: 35px;
+            width: 35px;
+        }
 
-#tinymce {
-    font-family: 'Montserrat', sans-serif;
-    width : 100%;
-    min-height: 70vh;
-}
+        .underline {
+            width: 53px;
+        }
 
-#tinymce div {
-    margin-bottom: 10px;
-}
+        .contact_form input[type='text'], [type='email'], .contact_form select, .contact_form textarea {
+            font-size: 0.875em;
+        }
+    }
 
-#chapterbutton {
-    !important
-    margin-left: 45%;
-    margin-bottom: 25px;
-}
-#tinymce h1 {
-    margin-top: 25px;;
-}
+    /*------------------------------------------------------------------ LegalNotice ------------------------------------------------------------------*/
+    #legalnotice {
+        font-family: 'Montserrat', sans-serif;
+        padding: 25px;
+    }
 
-/*------------------------------------------------------------------ AdminComments ------------------------------------------------------------------*/
+    #legalnotice h3 {
+        text-align: center;
+        padding-top: 25px;
+        padding-bottom: 25px;
+        font-size: x-large;
+        font-weight: 700;
+    }
 
-#tinyedit {
-    font-family: 'Montserrat', sans-serif;
-    width : 100%;
-    min-height: 70vh;
-}
+    /*------------------------------------------------------------------ ResetPassword ------------------------------------------------------------------*/
 
-#tinyedit div {
-    margin-bottom: 10px;
-}
-#tinyedit h1 {
-    margin-top: 25px;;
-}
+    #newPassword {
+        font-family: 'Montserrat', sans-serif;
+        margin-top: 2%;
+        margin-left: 40vw;
+        margin-right: 40vw;
+        text-align: center;
+        min-height: 80vh;
+    }
 
-/*------------------------------------------------------------------ AdminComments ------------------------------------------------------------------*/
+    #newPassword form {
+        display: flex;
+        flex-direction: column;
+    }
 
-.reportedcomments {
-    display : flex ;
-    flex-direction: column ;
-    align-items: center ;
-    min-height: 70vh;
-}
-
-.reportedcomments h1 {
-
-    margin : 1% 0 1% 0 ;
-    font-family:'Montserrat',sans-serif;
-    font-weight: bold;
-}
+    #newPassword button {
+        margin-top: 2%;
+    }
 
 
-.reportedcomments > a {
-    display:inline-block;
-    padding:0.35em 1.2em;
-    border:0.1em solid black ;
-    margin:0 0.3em 0.3em 0;
-    border-radius:0.12em;
-    box-sizing: border-box;
-    text-decoration:none;
-    font-family:'Montserrat',sans-serif;
-    font-weight:300;
-    color: black ;
-    text-align:center;
-    transition: all 0.2s;
-}
+    /*------------------------------------------------------------------ AdminConnection ------------------------------------------------------------------*/
+    #adminconnection {
+        font-family: 'Montserrat', sans-serif;
+        padding: 25px;
+        text-align: center;
 
-.reportedcomments > a:hover {
-    color: black  ;
-    background-color: rgba(0,0,0,0.25);
-}
+    }
 
-.unreportcomment, .moderatecomment {
-    display:inline-block;
-    padding:0.35em 1.2em;
-    border:0.5px solid black ;
-    border-radius:0.12em;
-    box-sizing: border-box;
-    text-decoration:none;
-    font-family:'Montserrat',sans-serif;
-    font-weight:300;
-    color: black ;
-    text-align:center;
-    transition: all 0.2s;
-    margin : 0 5px 5px 5px ;
-}
+    #adminconnection input {
+        display: flex;
+        flex-direction: column;
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 10px;
+    }
 
-.unreportcomment:hover {
-    background-color: rgba(0,100,0,0.25);
-}
+    #adminlostpassword {
+        font-family: 'Montserrat', sans-serif;
+        display: flex;
+        margin-left: auto;
+        margin-right: auto;
+        min-height: 70vh;
+        justify-content: center;
 
-.moderatecomment:hover {
-    background-color: rgba(200,0,0,0.25);
-}
+    }
 
-/*------------------------------------------------------------------ AdminChapter ------------------------------------------------------------------*/
+    #resetPassword {
+        min-height: 70vh;
+        font-family: 'Montserrat', sans-serif;
+    }
+    #resetPassword button, #resetPassword label, #resetPassword input {
+        display: flex;
+        flex-direction: column;
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 10px;
+        text-align: center;
+    }
 
-#chaptershome {
-    min-height: 70vh;
-}
+    #resetPassword label {
+        margin-top: 2%;
+    }
 
-#thechapters {
-    font-family:'Montserrat',sans-serif;
-    display : flex ;
-    justify-content: center ;
-    flex-flow : column ;
-}
+    /*------------------------------------------------------------------ CreateChapter ------------------------------------------------------------------*/
+    #tinymce {
+        font-family: 'Montserrat', sans-serif;
+        width: 100%;
+        min-height: 70vh;
+    }
 
-#chap-title {
-    margin : 1% 0 1% 0 ;
-    font-family:'Montserrat',sans-serif;
-    font-weight: bold;
-}
+    #tinymce div {
+        margin-bottom: 10px;
+    }
 
-#chap-create {
-    margin : 1% 45% 1% 45% ;
-    display:inline-block;
-    padding:0.35em 1.2em;
-    border:0.1em solid black ;
-    border-radius:0.12em;
-    box-sizing: border-box;
-    text-decoration:none;
-    font-family:'Montserrat',sans-serif;
-    font-weight:300;
-    color: black ;
-    text-align:center;
-    transition: all 0.2s;
-}
+    #chapterbutton {
+        margin-left: 45%;
+        margin-bottom: 25px;
+    }
 
-#chap-create:hover {
-    color: black  ;
-    background-color: rgba(0,0,0,0.25);
-}
+    #tinymce h1 {
+        margin-top: 25px;
+    }
 
-#thechapters table {
-    line-height: 2rem;
-    margin : 1% 5% 1% 5% ;
-    border : 0.25px solid black ;
-    font-family:'Montserrat',sans-serif;
-}
+    /*------------------------------------------------------------------ AdminComments ------------------------------------------------------------------*/
+    #tinyedit {
+        font-family: 'Montserrat', sans-serif;
+        width: 100%;
+        min-height: 70vh;
+    }
 
-.edit {
-    padding:0.35em 1.2em;
-    border:0.5px solid black ;
-    border-radius:0.12em;
-    box-sizing: border-box;
-    text-decoration:none;
-    font-family:'Montserrat',sans-serif;
-    font-weight:300;
-    color: black ;
-    text-align:center;
-    transition: all 0.2s;
-}
+    #tinyedit div {
+        margin-bottom: 10px;
+    }
 
-.edit:hover {
-    background-color: rgba(255,255,0,0.3);
-}
+    #tinyedit h1 {
+        margin-top: 25px;;
+    }
 
-.delete {
-    padding:0.35em 1.2em;
-    border:0.5px solid black ;
-    border-radius:0.12em;
-    box-sizing: border-box;
-    text-decoration:none;
-    font-family:'Montserrat',sans-serif;
-    font-weight:300;
-    color: black ;
-    text-align:center;
-    transition: all 0.2s;
-}
+    /*------------------------------------------------------------------ AdminComments ------------------------------------------------------------------*/
+    .reportedcomments {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        min-height: 70vh;
+    }
 
-.delete:hover {
-    background-color: rgba(200,0,0,0.25);
-}
+    .reportedcomments h1 {
 
-#thechapters table td {
-    width : 20% ;
-    text-align : center ;
-    /*border : 1px solid black ;*/
-}
+        margin: 1% 0 1% 0;
+        font-family: 'Montserrat', sans-serif;
+        font-weight: bold;
+    }
 
-#thechapters tr:nth-child(even) {
-    background-color : lightgrey;
-}
+    .reportedcomments > a {
+        display: inline-block;
+        padding: 0.35em 1.2em;
+        border: 0.1em solid black;
+        margin: 0 0.3em 0.3em 0;
+        border-radius: 0.12em;
+        box-sizing: border-box;
+        text-decoration: none;
+        font-family: 'Montserrat', sans-serif;
+        font-weight: 300;
+        color: black;
+        text-align: center;
+        transition: all 0.2s;
+    }
 
-#thechapters table thead {
-    background-color : #B6D7A8;
-    text-align : center ;
-    font-weight : 700 ;
-}
+    .reportedcomments > a:hover {
+        color: black;
+        background-color: rgba(0, 0, 0, 0.25);
+    }
+
+    .unreportcomment, .moderatecomment {
+        display: inline-block;
+        padding: 0.35em 1.2em;
+        border: 0.5px solid black;
+        border-radius: 0.12em;
+        box-sizing: border-box;
+        text-decoration: none;
+        font-family: 'Montserrat', sans-serif;
+        font-weight: 300;
+        color: black;
+        text-align: center;
+        transition: all 0.2s;
+        margin: 0 5px 5px 5px;
+    }
+
+    .unreportcomment:hover {
+        background-color: rgba(0, 100, 0, 0.25);
+    }
+
+    .moderatecomment:hover {
+        background-color: rgba(200, 0, 0, 0.25);
+    }
+
+    /*------------------------------------------------------------------ AdminChapter ------------------------------------------------------------------*/
+    #chaptershome {
+        /*min-height: 70vh;*/
+    }
+
+    #thechapters {
+        font-family: 'Montserrat', sans-serif;
+        display: flex;
+        justify-content: center;
+        flex-flow: column;
+    }
+
+    #chap-title {
+        margin: 1% 0 1% 0;
+        font-family: 'Montserrat', sans-serif;
+        font-weight: bold;
+    }
+
+    #chap-create {
+        justify-content: center;
+        display: flex;
+        margin-left: 40%;
+        margin-right: 40%;
+        padding: 0.35em 1.2em;
+        border: 0.1em solid black;
+        border-radius: 0.12em;
+        box-sizing: border-box;
+        text-decoration: none;
+        font-family: 'Montserrat', sans-serif;
+        font-weight: 300;
+        color: black;
+        text-align: center;
+        transition: all 0.2s;
+    }
+
+    #chap-create:hover {
+        color: black;
+        background-color: rgba(0, 0, 0, 0.25);
+    }
+
+    #thechapters table {
+        line-height: 2rem;
+        margin: 1% 1% 1% 1%;
+        border: 0.25px solid black;
+        font-family: 'Montserrat', sans-serif;
+    }
+
+    .edit {
+        border: 0.5px solid black;
+        border-radius: 0.12em;
+        box-sizing: border-box;
+        text-decoration: none;
+        font-family: 'Montserrat', sans-serif;
+        font-weight: 300;
+        color: black;
+        text-align: center;
+        transition: all 0.2s;
+        width : auto ;
+    }
+
+    .edit:hover {
+        background-color: rgba(255, 255, 0, 0.3);
+    }
+
+    .delete {
+        border: 0.5px solid black;
+        border-radius: 0.12em;
+        box-sizing: border-box;
+        text-decoration: none;
+        font-family: 'Montserrat', sans-serif;
+        font-weight: 300;
+        color: black;
+        text-align: center;
+        transition: all 0.2s;
+        width : auto ;
+    }
+
+    .delete:hover {
+        background-color: rgba(200, 0, 0, 0.25);
+    }
+
+    #thechapters table td {
+        width : 15% ;
+        text-align: center;
+        /*border : 1px solid black ;*/
+    }
+
+    #thechapters tr:nth-child(even) {
+        background-color: lightgrey;
+    }
+
+    #thechapters table thead {
+        background-color: #B6D7A8;
+        text-align: center;
+        font-weight: 700;
+    }
+
+    .desktop {
+        display: block ;
+    }
+
+    .mobile {
+        display : none ;
+    }

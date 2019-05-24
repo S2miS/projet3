@@ -6,14 +6,15 @@ ob_start();
     tinymce.init({
         selector: 'textarea#textarea',
         language: 'fr_FR',
-        height: 500
+        height: 500,
+        /*forced_root_block : ""*/
     });
 </script>
 <h1>Modifier un chapitre</h1>
 <form action="modifier-chapitre&id=<?= $_GET['id'] ; ?>" method="post">
     <div>
         <label for="title">Titre :</label>
-        <input type="text" id="title" name="title" value="<?= $result->getTitle() ; ?>">
+        <input type="text" id="title" name="title" value="<?= htmlspecialchars($result->getTitle()) ; ?>">
     </div>
     <div>
         <label for="number">Numéro de chapitre :</label>

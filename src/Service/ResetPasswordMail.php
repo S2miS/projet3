@@ -1,10 +1,4 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: Sim25
- * Date: 07/05/2019
- * Time: 17:36
- */
 
 namespace App\Service;
 
@@ -17,25 +11,23 @@ class ResetPasswordMail{
 
     public function resetPasswordMail($email, $token){
         $mail = new PHPMailer(true);
-        $mail->SMTPDebug=2;
-        $mail->IsSMTP();
         $mail->Host = "smtp.gmail.com";
         $mail->SMTPAuth = true;
         $mail->Username = "thegeekization@gmail.com";
         $mail->Password = "dmsvjiunkgmwmppx";
-        $mail->SMTPSecure = "ssl";
+        $mail->SMTPSecure = "";
         $mail->Port = 465;
 
 // Expéditeur
         $mail->setFrom('thegeekization@gmail.com', 'Jean Forteroche');
 // Destinataire
-        $mail->addAddress('simbox94@yahoo.fr');
+        $mail->addAddress($email);
         $mail->isHTML(true);
 // Objet
-        $mail->Subject = 'Message de la part de '.$_POST['name'];
+        $mail->Subject = 'Reinitialisation de votre mot de passe';
 
 // Votre message
-        $mail->Body='Mail : '.$_POST['email'].' Titre : '.$_POST['title'].' Message : '.$_POST['message'];
+        $mail->Body='<a href="https://lpmiaw.univ-lr.fr/perso/mfruchar/P3Simon/changement-mdp-nouveau-mdp&token='.$token.'">Cliquez ici pour changer votre mot de passe</a>';
         $mail->send();
 // Envoi du mail avec gestion des erreurs
         /* if(!$mail->Send()) {

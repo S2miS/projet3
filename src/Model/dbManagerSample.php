@@ -1,3 +1,4 @@
+
 <?php
 /**
  * Created by PhpStorm.
@@ -5,11 +6,8 @@
  * Date: 07/05/2019
  * Time: 18:06
  */
-
 namespace App\Model;
-
 use \PDO;
-
 class dbManagerSample
 {
     protected function dbConnect(){

@@ -20,7 +20,8 @@ class ComposerStaticInit194685cff8e3569fd0587e96cfd3bb75
     public static $prefixDirsPsr4 = array (
         'PHPMailer\\PHPMailer\\' => 
         array (
-            0 => __DIR__ . '/..' . '/phpmailer/phpmailer/src',
+            0 => 'C:\\wamp64\\www\\Projet3\\vendor',
+            1 => __DIR__ . '/..' . '/phpmailer/phpmailer/src',
         ),
         'App\\' => 
         array (

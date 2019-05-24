@@ -6,7 +6,8 @@ ob_start();
     tinymce.init({
         selector: 'textarea#textarea',
         language: 'fr_FR',
-        height: 500
+        height: 500,
+        /*forced_root_block : ""*/
     });
 </script>
 <div id="tinymce">

@@ -1,0 +1,137 @@
+/*------------------------------------------------------------------ Responsive ------------------------------------------------------------------*/
+/* For mobile phones: */
+@media all and (max-width: 600px) {
+    #menu{
+        font-size: medium;
+        display: flex;
+        flex-direction: row;
+        background-color: #B6D7A8;
+        justify-content: space-around;
+        padding: 10px 5px 10px 5px;
+    }
+
+    #adminmenu {
+        font-size: medium;
+        display: flex;
+        justify-content: space-around;
+        padding: 10px 5px 10px 5px;
+    }
+
+    #homechapters {
+        font-family: 'Montserrat', sans-serif;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+    }
+
+    #footer {
+        height: 22vh;
+    }
+
+    #footer a {
+        padding-right: 25%;
+        text-align: center;
+    }
+
+    #icons {
+        background-color: rgb(162, 196, 201);
+        font-size: medium;
+    }
+
+    #footer span {
+        display: none;
+    }
+
+    #aboutcontact {
+        flex-direction: row;
+        justify-content: space-around;
+    }
+    #social {
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-around;
+        float: none;
+        width: 100%;
+    }
+
+    #Summary p {
+        padding-left: 5%;
+        padding-right: 5%;
+        justify-content: center;
+
+    }
+
+    #thetext h1 {
+        font-size: 1em;
+    }
+
+    #thechapter h2 {
+        font-family: 'Montserrat', sans-serif;
+        font-size: 1em;
+        text-transform: uppercase;
+        text-align: center;
+    }
+
+
+    #thechapter form {
+        margin-left: 0;
+        margin-right: 0;
+    }
+
+    #about img {
+        margin-left: 9%;
+        margin-right: auto;
+        margin-bottom: 2%;
+
+    }
+
+    #about tr {
+        flex-direction: column;
+        padding-left: 2%;
+        padding-right: 2%;
+    }
+
+    .reportedcomments h1 {
+        font-size: 1em;
+    }
+
+    #commtitle {
+        padding: 0;
+    }
+
+    #thecomments {
+        padding-right: 0;
+        padding-left: 0;
+    }
+
+    #thecomments a {
+        display: flex;
+        justify-content: center;
+    }
+
+    #chaptershome h1 {
+        font-size: 1em;
+    }
+
+    #chap-create {
+        justify-content: center;
+        display: flex;
+        margin-left: 25%;
+        margin-right: 25%;
+        margin-top: 10px;
+    }
+
+    .desktop {
+        display: none;
+    }
+
+    .mobile {
+    display : block ;
+    }
+
+    #newPassword {
+        margin-left: 20vw;
+        margin-right: 20vw;
+    }
+
+}

@@ -4,7 +4,7 @@ ob_start();
 <div id="about">
     <div id="description">
      <figure>
-         <img src="../../../../Projet3/images/portrait.jpg" alt="Jean">
+         <img src="https://lpmiaw.univ-lr.fr/perso/mfruchar/P3Simon/images/portrait.jpg" alt="Jean">
         <figcaption>
             Cras sit amet nulla condimentum, commodo diam sed, euismod erat. Cras non mi ipsum. Etiam sit amet diam
             hendrerit, accumsan ipsum vel, luctus augue. Cras vitae rhoncus ipsum. Pellentesque habitant morbi tristique

@@ -77,10 +77,18 @@ class CommentaryManager extends dbManager
         return $report;
     }
 
-    /** Moderate a commments **/
+    /** Moderate a comments **/
     public function moderateComm(Commentary $comments)
     {
         $request = $this->db->prepare('UPDATE comments SET moderate = 1  WHERE id = :id');
+        $moderate = $request->execute(['id'=>$comments->getId()]);
+        return $moderate;
+    }
+
+    /** Unmoderate a comments **/
+    public function unmoderateComm(Commentary $comments)
+    {
+        $request = $this->db->prepare('UPDATE comments SET moderate = 0  WHERE id = :id');
         $moderate = $request->execute(['id'=>$comments->getId()]);
         return $moderate;
     }

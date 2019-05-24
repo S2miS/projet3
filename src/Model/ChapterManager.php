@@ -116,7 +116,7 @@ class ChapterManager extends dbManager
         return $chapter;
     }
 
-    /** ??? **/
+    /** Check if the chapter have a unique number **/
     public function uniqueNumber($number)
     {
         $req = $this->db->prepare('SELECT ch.number FROM chapter ch WHERE ch.number= ?');
